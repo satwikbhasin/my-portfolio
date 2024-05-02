@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "satwikbhasin.com",
     images: [
       {
-        url: "https://satwikbhasin.com/og.png",
+        url: "https://satwikbhasin.com/SB.png",
         width: 1920,
         height: 1080,
       },
@@ -37,12 +37,8 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  twitter: {
-    title: "Chronark",
-    card: "summary_large_image",
-  },
   icons: {
-    shortcut: "/favicon.png",
+    shortcut: "/SB.png",
   },
 };
 const inter = Inter({
