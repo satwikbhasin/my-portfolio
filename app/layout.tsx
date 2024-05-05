@@ -2,8 +2,8 @@ import "../global.css";
 import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
 import { Metadata } from "next";
-// import { Analytics } from "./components/analytics";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "./components/analytics";
+// import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: {
@@ -60,14 +60,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <head>
-        {/* <Analytics /> */}
+        <Analytics />
       </head>
       <body
         className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
           }`}
       >
         {children}
-        <Analytics />
+        {/* <Analytics /> */}
       </body>
     </html>
   );
