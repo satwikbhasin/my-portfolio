@@ -56,7 +56,7 @@ export default async function ProjectsPage() {
             <Link href={`/projects/${featured.slug}`}>
               <article className="relative w-full h-full p-4 md:p-8">
                 <div className="flex items-center justify-between gap-2">
-                  <div className="text-xs" style={{ color: "#33d49a" }}>
+                  <div className="text-xs text-sea-green">
                     {featured.date ? (
                       <time dateTime={new Date(featured.date).toISOString()}>
                         {Intl.DateTimeFormat(undefined, {
@@ -67,7 +67,7 @@ export default async function ProjectsPage() {
                       <span>SOON</span>
                     )}
                   </div>
-                  <span className="flex items-center gap-1 text-xs text-zinc-500" style={{ color: "#33d49a" }}>
+                  <span className="flex items-center gap-1 text-xs text-sea-green">
                     <Eye className="w-4 h-4" />
                     {Intl.NumberFormat("en-US", { notation: "compact" }).format(
                       views[featured.slug] ?? 0,
@@ -85,7 +85,7 @@ export default async function ProjectsPage() {
                   {featured.description}
                 </p>
                 <div className="absolute bottom-4 md:bottom-8">
-                  <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block" style={{ color: "#33d49a" }}>
+                  <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block text-sea-green">
                     Read more <span aria-hidden="true">&rarr;</span>
                   </p>
                 </div>

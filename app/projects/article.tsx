@@ -12,7 +12,7 @@ export const Article: React.FC<Props> = ({ project, views }) => {
 		<Link href={`/projects/${project.slug}`}>
 			<article className="p-4 md:p-8">
 				<div className="flex justify-between gap-2 items-center" style={{ color: "#50C878" }}>
-					<span style={{ color: "#33d49a" }} className=" color: #50C878 text-xs duration-1000 text-zinc-200 group-hover:text-white group-hover:border-zinc-200 drop-shadow-orange">
+					<span className="text-xs duration-1000 text-sea-green group-hover:border-zinc-200 drop-shadow-orange">
 						{project.date ? (
 							<time dateTime={new Date(project.date).toISOString()}>
 								{Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(
@@ -23,7 +23,7 @@ export const Article: React.FC<Props> = ({ project, views }) => {
 							<span>SOON</span>
 						)}
 					</span>
-					<span className="text-zinc-500 text-xs  flex items-center gap-1" style={{ color: "#33d49a" }}>
+					<span className="text-xs flex items-center gap-1 text-sea-green">
 						<Eye className="w-4 h-4" />
 						{Intl.NumberFormat("en-US", { notation: "compact" }).format(views)}
 					</span>

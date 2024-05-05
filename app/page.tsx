@@ -5,6 +5,7 @@ import Particles from "./components/particles";
 const navigation = [
   { name: "projects", href: "/projects" },
   { name: "contact", href: "/contact" },
+  { name: "chat", href: "/chat" },
 ];
 
 export default function Home() {
@@ -16,8 +17,7 @@ export default function Home() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-              style={{ color: "#33d49a" }}
+              className="text-sm duration-500 text-sea-green hover:text-zinc-100"
             >
               {item.name}
             </Link>
