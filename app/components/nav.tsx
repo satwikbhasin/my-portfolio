@@ -32,14 +32,14 @@ export const Navigation: React.FC = () => {
 							className="duration-200 text-zinc-400 hover:text-zinc-100"
 							style={{ color: "#33d49a" }}
 						>
-							Projects
+							projects
 						</Link>
 						<Link
 							href="/contact"
 							className="duration-200 text-zinc-400 hover:text-zinc-100"
 							style={{ color: "#33d49a" }}
 						>
-							Contact
+							contact
 						</Link>
 					</div>
 
