@@ -42,11 +42,11 @@ export default function Example() {
 									className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent"
 									aria-hidden="true"
 								/>
-								<span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange" style={{ color: "#33d49a" }}>
+								<span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-sea-green group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-sea-green drop-shadow-orange">
 									{s.icon}
 								</span>
 								<div className="z-10 flex flex-col items-center">
-									<span className="lg:text-xl font-medium duration-150 xl:text-3xl text-zinc-200 group-hover:text-white font-display">
+									<span className="lg:text-xl font-medium duration-150 xl:text-3xl text-zinc-200 group-hover:text-sea-green font-display">
 										{s.handle}
 									</span>
 									<span className="mt-4 text-sm text-center duration-1000 text-zinc-400 group-hover:text-zinc-200">

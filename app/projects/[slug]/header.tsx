@@ -52,14 +52,13 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 					}`}
 			>
 				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
-					<div className="flex justify-between gap-8">
+					<div className="flex justify-between gap-8 text-sea-green">
 						<span
 							title="View counter for this page"
 							className={`duration-200 hover:font-medium flex items-center gap-1 ${isIntersecting
-								? " text-zinc-400 hover:text-zinc-100"
-								: "text-zinc-600 hover:text-zinc-900"
+								? "hover:text-zinc-100"
+								: "text-zinc-800 hover:text-zinc-900"
 								} `}
-							style={{ color: "#33d49a" }}
 						>
 							<Eye className="w-5 h-5" />
 							{Intl.NumberFormat("en-US", { notation: "compact" }).format(
@@ -69,19 +68,17 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 						<Link target="_blank" href="https://linkedin.com/in/satwikbhasin">
 							<Linkedin
 								className={`w-6 h-6 duration-200 hover:font-medium ${isIntersecting
-									? " text-zinc-400 hover:text-zinc-100"
+									? "hover:text-zinc-100"
 									: "text-zinc-600 hover:text-zinc-900"
 									} `}
-								style={{ color: "#33d49a" }}
 							/>
 						</Link>
 						<Link target="_blank" href="https://github.com/satwikbhasin">
 							<Github
 								className={`w-6 h-6 duration-200 hover:font-medium ${isIntersecting
-									? " text-zinc-400 hover:text-zinc-100"
+									? "hover:text-zinc-100"
 									: "text-zinc-600 hover:text-zinc-900"
 									} `}
-								style={{ color: "#33d49a" }}
 							/>
 						</Link>
 					</div>
@@ -112,7 +109,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 						<div className="grid grid-cols-1 gap-y-6 gap-x-8 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
 							{links.map((link) => (
 								<Link target="_blank" key={link.label} href={link.href}>
-									<div style={{ color: "#33d49a" }}>
+									<div className="text-sea-green hover:text-zinc-100">
 										{link.label} <span aria-hidden="true">&rarr;</span>
 									</div>
 								</Link>

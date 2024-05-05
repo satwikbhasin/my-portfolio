@@ -102,6 +102,9 @@ module.exports = {
 					},
 				},
 			},
+			colors: {
+				'sea-green': '#33D49A',
+			}
 		},
 	},
 	plugins: [
