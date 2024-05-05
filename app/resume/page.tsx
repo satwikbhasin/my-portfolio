@@ -1,6 +1,13 @@
 "use client";
 import { Navigation } from "../components/nav";
-import { Download, ClipboardCheck, Copy, Check, View } from "lucide-react";
+import {
+  Download,
+  ClipboardCheck,
+  Copy,
+  Check,
+  View,
+  ExternalLink,
+} from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -11,7 +18,12 @@ export default function ResumeViewer() {
     <div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
       <Navigation />
       <div className="container flex flex-col items-center justify-center py-20 mx-auto h-screen gap-2">
-        <div className="rounded-lg overflow-hidden relative">
+        <div
+          className="group rounded-lg overflow-hidden relative"
+          onClick={() => {
+            window.open("/resume.pdf", "_blank");
+          }}
+        >
           <Image
             src="/resume_image.png"
             alt="Resume"
@@ -19,7 +31,9 @@ export default function ResumeViewer() {
             height={500}
             layout="responsive"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-70">
+            <View className="text-white opacity-0 group-hover:opacity-100" />
+          </div>
         </div>
         <div className="flex flex-row gap-2 mt-3">
           <button

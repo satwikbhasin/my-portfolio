@@ -107,6 +107,11 @@ module.exports = {
 			}
 		},
 	},
+	variants: {
+		extend: {
+			opacity: ['group-hover'],
+		},
+	},
 	plugins: [
 		require("@tailwindcss/typography"),
 		require("tailwindcss-debug-screens"),
