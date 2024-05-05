@@ -36,16 +36,16 @@ export const Navigation: React.FC = () => {
 							projects
 						</Link>
 						<Link
-							href="/contact"
-							className={`duration-200 ${pathName === '/contact' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'}`}
-						>
-							contact
-						</Link>
-						<Link
 							href="/resume"
 							className={`duration-200 ${pathName === '/resume' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'}`}
 						>
 							resume
+						</Link>
+						<Link
+							href="/contact"
+							className={`duration-200 ${pathName === '/contact' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'}`}
+						>
+							contact
 						</Link>
 						<Link
 							href="/chat"
