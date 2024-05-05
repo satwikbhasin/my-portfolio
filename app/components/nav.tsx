@@ -42,6 +42,12 @@ export const Navigation: React.FC = () => {
 							contact
 						</Link>
 						<Link
+							href="/resume"
+							className={`duration-200 ${pathName === '/resume' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'}`}
+						>
+							resume
+						</Link>
+						<Link
 							href="/chat"
 							className={`duration-200 ${pathName === '/chat' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'}`}
 						>
