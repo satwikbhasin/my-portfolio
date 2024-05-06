@@ -6,12 +6,13 @@ import {
   Copy,
   Check,
   View,
-  ExternalLink,
+  Loader,
 } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 
 export default function ResumeViewer() {
+  const [resumeLoading, setResumeLoading] = useState(true);
   const [copyTimeout, setCopyTimeout] = useState(false);
   const [downloadTimeout, setDownloadTimeout] = useState(false);
   return (
@@ -24,11 +25,17 @@ export default function ResumeViewer() {
             window.open("/resume.pdf", "_blank");
           }}
         >
+          {resumeLoading && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Loader className="animate-spin text-sea-green" />
+            </div>
+          )}
           <Image
             src="/resume_image.png"
             alt="Resume"
             width={500}
             height={500}
+            onLoad={() => setResumeLoading(false)}
             layout="responsive"
           />
           <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-70">
