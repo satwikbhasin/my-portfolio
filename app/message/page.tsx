@@ -1,5 +1,5 @@
 "use client"
-import { TextareaAutosize } from "@mui/material";
+import { TextareaAutosize, Snackbar, Alert } from "@mui/material";
 import { useState } from 'react';
 import { Navigation } from "../components/nav";
 import { MessageSquare, User, Mail, Phone, Send } from "lucide-react";
@@ -15,27 +15,56 @@ export default function MessageForm() {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [state, handleSubmit] = useForm("mleqzvle");
+    const [messageSent, setMessageSent] = useState(false);
+    const [emailInvalid, setEmailInvalid] = useState(false);
+    const [messageUnsent, setMessageUnsent] = useState(false);
+    const [timeoutId, setTimeoutId] = useState<number | undefined>(undefined);
 
     const handleFormSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
         if (!isEmailValid(email)) {
-            alert("Please enter a valid email address.");
-            return;
+            setEmailInvalid(true);
         } else {
-            await handleSubmit({
-                message: message,
-                name: name,
-                email: email,
-                phone: phone,
-            });
-            alert(`Message sent: ${message}`);
+            setMessageSent(true);
+            const id = setTimeout(async () => {
+                console.log("messageUnsent: " + messageUnsent);
+                if (messageUnsent) {
+                    setMessageUnsent(false);
+                    return;
+                }
+                await handleSubmit({
+                    message: message,
+                    name: name,
+                    email: email,
+                    phone: phone,
+                });
+                resetForm();
+            }, 6000);
+            setTimeoutId(id);
         };
+    }
+
+    const resetForm = () => {
+        setMessage("");
+        setName("");
+        setEmail("");
+        setPhone("");
     }
 
     const isEmailValid = (email: string) => {
         const regex = /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
         return regex.test(email);
     };
+
+    const undoSend = (
+        <button onClick={() => {
+            setMessageUnsent(true); if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+        }}>
+            UNDO
+        </button>
+    );
 
     return (
         <div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
@@ -135,6 +164,30 @@ export default function MessageForm() {
                         </div>
                     </div>
                 </form>
+                <Snackbar
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                    onClose={() => { setMessageSent(false) }}
+                    open={messageSent}
+                    autoHideDuration={6000}
+                    action={undoSend}
+                    message="Message Sent"
+                />
+                <Snackbar
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                    onClose={() => { setEmailInvalid(false) }}
+                    open={emailInvalid}
+                    autoHideDuration={6000}
+                    message="Invalid Email Address"
+                />
+                <Snackbar
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                    onClose={() => {
+                        setMessageUnsent(false);
+                    }}
+                    open={messageUnsent}
+                    autoHideDuration={6000}
+                    message="Message not sent"
+                />
             </div>
         </div>
     );
