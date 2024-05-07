@@ -51,7 +51,7 @@ export const Navigation: React.FC = () => {
 							href="/chat"
 							className={`duration-200 ${pathName === '/chat' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'}`}
 						>
-							chat
+							message
 						</Link>
 					</div>
 

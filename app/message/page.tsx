@@ -9,7 +9,7 @@ import 'react-international-phone/style.css';
 import './phoneField.css';
 
 
-export default function ContactForm() {
+export default function MessageForm() {
     const [message, setMessage] = useState("");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -40,7 +40,7 @@ export default function ContactForm() {
     return (
         <div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
             <Navigation />
-            <div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
+            <div className="container flex items-center justify-center min-h-screen mx-auto py-4">
                 <form
                     onSubmit={handleFormSubmit}
                 >
@@ -62,6 +62,7 @@ export default function ContactForm() {
                                     border: "1px solid #6c6c74",
                                     padding: 10,
                                     borderRadius: 5,
+                                    fontSize: "small"
                                 }}
                                 id="message"
                                 name="message"
