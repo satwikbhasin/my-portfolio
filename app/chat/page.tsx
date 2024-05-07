@@ -123,6 +123,7 @@ export default function ContactForm() {
                                 <PhoneInput
                                     value={phone}
                                     onChange={(phone) => setPhone(phone)}
+                                    defaultCountry="us"
                                     placeholder="Phone Number"
                                 />
                                 <input readOnly required={false} hidden value={phone} type="telephone" name="telephone"></input>
