@@ -104,6 +104,9 @@ module.exports = {
 			},
 			colors: {
 				'sea-green': '#33D49A',
+				'text': "#6C6C74",
+				'text-bg': "#1F1F1F",
+				'hover': "#383838"
 			}
 		},
 	},

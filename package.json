@@ -9,6 +9,10 @@
     "fmt": "pnpm rome check . --apply-unsafe && pnpm rome format . --write"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@formspree/react": "^2.5.1",
+    "@mui/material": "^5.15.16",
     "@next/font": "^13.5.4",
     "@next/mdx": "^13.5.4",
     "@upstash/redis": "^1.23.3",
@@ -17,10 +21,11 @@
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.284.0",
     "markdown-wasm": "^1.2.0",
-    "next": "^14.2.3",
+    "next": "^13.5.6",
     "next-contentlayer": "^0.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-international-phone": "^4.2.9",
     "react-wrap-balancer": "^1.1.0",
     "rehype-autolink-headings": "^7.0.0",
     "rehype-pretty-code": "^0.10.1",
