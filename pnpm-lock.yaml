@@ -29,9 +29,6 @@ importers:
       '@mui/material':
         specifier: ^5.15.16
         version: 5.15.16(@emotion/react@11.11.4(@types/react@18.2.28)(react@18.2.0))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.2.28)(react@18.2.0))(@types/react@18.2.28)(react@18.2.0))(@types/react@18.2.28)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@next/font':
-        specifier: ^13.5.4
-        version: 13.5.4
       '@next/mdx':
         specifier: ^13.5.4
         version: 13.5.4
@@ -584,9 +581,6 @@ packages:
 
   '@next/env@14.2.3':
     resolution: {integrity: sha512-W7fd7IbkfmeeY2gXrzJYDx8D2lWKbVoTIj1o1ScPHNzvp30s1AuoEFSdr39bC5sjxJaxTtq3OTCZboNp0lNWHA==}
-
-  '@next/font@13.5.4':
-    resolution: {integrity: sha512-rOMki1/9BP9N93RZABiiF0EidMGgyCvNVSKvLLAnMkVh/IYk4Z827+NRuxCyRQCeT3vv/AeCiP5SFPAP10SPrQ==}
 
   '@next/mdx@13.5.4':
     resolution: {integrity: sha512-WYdWeDZUvX9h0BnjDtwyFy2We4ko8ox5EuglN27rCoYz1xj8fQ8KAn7reZgXwT2RX2hxUOl4eTNbXBfsrw7Gew==}
@@ -2828,8 +2822,6 @@ snapshots:
       '@types/react': 18.2.28
 
   '@next/env@14.2.3': {}
-
-  '@next/font@13.5.4': {}
 
   '@next/mdx@13.5.4':
     dependencies:

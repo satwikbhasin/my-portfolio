@@ -13,7 +13,6 @@
     "@emotion/styled": "^11.11.5",
     "@formspree/react": "^2.5.1",
     "@mui/material": "^5.15.16",
-    "@next/font": "^13.5.4",
     "@next/mdx": "^13.5.4",
     "@upstash/redis": "^1.23.3",
     "@vercel/analytics": "^1.2.2",
