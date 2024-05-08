@@ -26,7 +26,7 @@ export default function MessageForm() {
             setEmailInvalid(true);
         } else {
             setMessageSent(true);
-            const id = setTimeout(async () => {
+            const id = window.setTimeout(async () => {
                 console.log("messageUnsent: " + messageUnsent);
                 if (messageUnsent) {
                     setMessageUnsent(false);
