@@ -49,7 +49,7 @@ export default function Example() {
 									<span className="lg:text-xl font-medium duration-150 xl:text-3xl text-zinc-200 group-hover:text-sea-green font-display">
 										{s.handle}
 									</span>
-									<span className="mt-4 text-sm text-center duration-1000 text-zinc-400 group-hover:text-zinc-200">
+									<span className="mt-4 text-sm text-center duration-1000 text-zinc-400 group-hover:text-zinc-200 font-kode-mono">
 										{s.label}
 									</span>
 								</div>
