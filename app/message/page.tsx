@@ -60,12 +60,12 @@ export default function MessageForm() {
     return (
         <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
             <Navigation />
-            <div className="container flex items-center justify-center min-h-screen mx-auto py-4">
+            <div className="container flex items-center justify-center min-h-screen mx-auto">
                 <form
                     onSubmit={handleFormSubmit}
                     className="container flex items-center justify-center min-h-screen px-4 mx-auto"
                 >
-                    <div className="grid w-full grid-cols-1 gap-5 mx-auto mt-32 xs:grid-cols-1 sm:mt-0 sm:grid-cols-1 md:grid-cols-1 lg:gap-16 lg:grid-cols-3 xl:grid-cols-3 lg:gap-10">
+                    <div className="grid w-full grid-cols-1 p-5 gap-1 mx-auto mt-32 xs:grid-cols-1 sm:mt-0 sm:grid-cols-1 md:grid-cols-1 lg:gap-10 lg:grid-cols-3 xl:grid-cols-3">
                         <div className="flex flex-col gap-2 col-span-2">
                             <div className="text-white flex flex-row items-center gap-1"><MessageSquare
                                 color="#6c6c74"
