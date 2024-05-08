@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { usePathname } from 'next/navigation'
+import { Typography } from "@mui/material";
 
 export const Navigation: React.FC = () => {
 	const pathName = usePathname()
@@ -31,25 +32,24 @@ export const Navigation: React.FC = () => {
 					<div className="flex justify-between gap-8">
 						<Link
 							href="/projects"
-							className={`duration-200 ${pathName === '/projects' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'}`}
-						>
-							projects
+							className={`duration-200 ${pathName === '/projects' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'} font-kode-mono`}>
+								projects
 						</Link>
 						<Link
 							href="/resume"
-							className={`duration-200 ${pathName === '/resume' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'}`}
+							className={`duration-200 ${pathName === '/resume' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'} font-kode-mono`}
 						>
 							resume
 						</Link>
 						<Link
 							href="/contact"
-							className={`duration-200 ${pathName === '/contact' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'}`}
+							className={`duration-200 ${pathName === '/contact' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'} font-kode-mono`}
 						>
 							contact
 						</Link>
 						<Link
 							href="/message"
-							className={`duration-200 ${pathName === '/message' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'}`}
+							className={`duration-200 ${pathName === '/message' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100 font-kode-mono'}`}
 						>
 							message
 						</Link>
