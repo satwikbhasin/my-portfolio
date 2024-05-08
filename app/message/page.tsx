@@ -8,47 +8,37 @@ import { PhoneInput } from "react-international-phone";
 import 'react-international-phone/style.css';
 import './phoneField.css';
 
+import { testUndoSend } from "./test";
+
 
 export default function MessageForm() {
-    const [message, setMessage] = useState("");
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
+    const [formData, setFormData] = useState({ message: "", name: "", email: "", phone: "" });
     const [state, handleSubmit] = useForm("mleqzvle");
-    const [messageSent, setMessageSent] = useState(false);
-    const [emailInvalid, setEmailInvalid] = useState(false);
-    const [messageUnsent, setMessageUnsent] = useState(false);
+    const [showMessageSentAlert, setShowMessageSentAlert] = useState(false);
+    const [showEmailInvalidAlert, setShowEmailInvalidAlert] = useState(false);
+    const [showMessageNotSentAlert, setShowMessageNotSentAlert] = useState(false);
     const [timeoutId, setTimeoutId] = useState<number | undefined>(undefined);
 
     const handleFormSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-        if (!isEmailValid(email)) {
-            setEmailInvalid(true);
+        if (!isEmailValid(formData.email)) {
+            setShowEmailInvalidAlert(true);
         } else {
-            setMessageSent(true);
+            setShowMessageSentAlert(true);
+            resetForm();
             const id = window.setTimeout(async () => {
-                console.log("messageUnsent: " + messageUnsent);
-                if (messageUnsent) {
-                    setMessageUnsent(false);
-                    return;
-                }
-                await handleSubmit({
-                    message: message,
-                    name: name,
-                    email: email,
-                    phone: phone,
-                });
-                resetForm();
+                setShowEmailInvalidAlert(false);
+                setShowMessageSentAlert(false);
+                setShowMessageNotSentAlert(false);
+                await handleSubmit(formData);
+                // testUndoSend(formData);
             }, 6000);
             setTimeoutId(id);
         };
     }
 
     const resetForm = () => {
-        setMessage("");
-        setName("");
-        setEmail("");
-        setPhone("");
+        setFormData({ message: "", name: "", email: "", phone: "" });
     }
 
     const isEmailValid = (email: string) => {
@@ -58,7 +48,8 @@ export default function MessageForm() {
 
     const undoSend = (
         <button onClick={() => {
-            setMessageUnsent(true); if (timeoutId) {
+            setShowMessageNotSentAlert(true);
+            if (timeoutId) {
                 clearTimeout(timeoutId);
             }
         }}>
@@ -67,20 +58,21 @@ export default function MessageForm() {
     );
 
     return (
-        <div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
+        <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
             <Navigation />
             <div className="container flex items-center justify-center min-h-screen mx-auto py-4">
                 <form
                     onSubmit={handleFormSubmit}
+                    className="container flex items-center justify-center min-h-screen px-4 mx-auto"
                 >
-                    <div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-2 lg:gap-16">
-                        <div id="message-field" className="flex flex-col gap-2">
+                    <div className="grid w-full grid-cols-1 gap-5 mx-auto mt-32 xs:grid-cols-1 sm:mt-0 sm:grid-cols-1 md:grid-cols-1 lg:gap-16 lg:grid-cols-3 xl:grid-cols-3 lg:gap-10">
+                        <div className="flex flex-col gap-2 col-span-2">
                             <div className="text-white flex flex-row items-center gap-1"><MessageSquare
                                 color="#6c6c74"
                                 size={20}
                             />Message</div>
                             <TextareaAutosize
-                                value={message}
+                                value={formData.message}
                                 minRows={6}
                                 maxRows={5}
                                 style={{
@@ -91,23 +83,24 @@ export default function MessageForm() {
                                     border: "1px solid #6c6c74",
                                     padding: 10,
                                     borderRadius: 5,
-                                    fontSize: "small"
+                                    fontSize: "small",
+                                    width: "100%"
                                 }}
                                 id="message"
                                 name="message"
                                 placeholder="Type your message here"
                                 required={true}
-                                onChange={(e) => setMessage(e.target.value)}
+                                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             />
                         </div>
-                        <div className="flex flex-col gap-4" >
-                            <div className="flex flex-col gap-1">
+                        <div className="flex flex-col gap-5 items-center" >
+                            <div className="flex flex-col w-1/2 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
                                 <div className="text-white flex flex-row items-center gap-1"><User
                                     color="#6c6c74"
                                     size={20}
                                 />Name</div>
                                 <input
-                                    value={name}
+                                    value={formData.name}
                                     type="text"
                                     name="name"
                                     required={true}
@@ -118,73 +111,76 @@ export default function MessageForm() {
                                         backgroundColor: "#1f1f1f",
                                         padding: 10,
                                         borderRadius: 5,
+                                        width: "100%",
                                         fontSize: "small"
                                     }}
-                                    onChange={(e) => setName(e.target.value)}
+                                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                 />
                             </div>
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col w-1/2 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
                                 <div className="text-white flex flex-row items-center gap-1"><Mail
                                     color="#6c6c74"
                                     size={20}
                                 />Email</div>
                                 <input
-                                    value={email}
+                                    value={formData.email}
                                     style={{
                                         overflow: "auto",
                                         color: "#6c6c74",
                                         backgroundColor: "#1f1f1f",
                                         padding: 10,
                                         borderRadius: 5,
+                                        width: "100%",
                                         fontSize: "small"
                                     }}
                                     type="email"
                                     name="email"
                                     placeholder="Email Address"
                                     required={true}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                 />
                             </div>
-                            <div className="flex flex-col gap-2">
+                            <div className="flex flex-col w-1/2 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
                                 <div className="text-white flex flex-row items-center gap-1"><Phone
                                     color="#6c6c74"
                                     size={20}
                                 />Phone (optional)</div>
                                 <PhoneInput
-                                    value={phone}
-                                    onChange={(phone) => setPhone(phone)}
+                                    value={formData.phone}
+                                    onChange={(phone) => setFormData({ ...formData, phone })}
                                     defaultCountry="us"
                                     placeholder="Phone Number"
+                                    inputStyle={{
+                                        width: "100%",
+                                    }}
+                                    className="gap-1"
                                 />
-                                <input readOnly required={false} hidden value={phone} type="telephone" name="telephone"></input>
                             </div>
-                            <div className="flex w-full justify-center items-center mt-3">
-                                <button disabled={message.trim() === "" || email.trim() === "" || name.trim() === ""} type="submit" className="flex bg-zinc-300 rounded-lg p-2 gap-2 w-full justify-center items-center disabled:bg-zinc-700">Send<Send size={18} /></button>
+                            <div className="flex flex-col w-1/2 gap-1 xs:w-1/2 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
+                                <button disabled={formData.message.trim() === "" || formData.email.trim() === "" || formData.name.trim() === ""} type="submit" className="flex bg-zinc-300 rounded-lg p-2 gap-2 w-full justify-center items-center disabled:bg-zinc-700">Send<Send size={18} /></button>
                             </div>
                         </div>
                     </div>
                 </form>
                 <Snackbar
                     anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                    onClose={() => { setMessageSent(false) }}
-                    open={messageSent}
+                    onClose={() => { setShowMessageSentAlert(false) }}
+                    open={showMessageSentAlert}
                     autoHideDuration={6000}
                     action={undoSend}
                     message="Message Sent"
                 />
                 <Snackbar
                     anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                    onClose={() => { setEmailInvalid(false) }}
-                    open={emailInvalid}
+                    onClose={() => { setShowEmailInvalidAlert(false) }}
+                    open={showEmailInvalidAlert}
                     autoHideDuration={6000}
                     message="Invalid Email Address"
                 />
                 <Snackbar
                     anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                    onClose={() => {
-                        setMessageUnsent(false);
-                    }}
-                    open={messageUnsent}
+                    onClose={() => { setShowMessageNotSentAlert(false); }}
+                    open={showMessageNotSentAlert}
                     autoHideDuration={6000}
                     message="Message not sent"
                 />

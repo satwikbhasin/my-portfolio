@@ -49,4 +49,5 @@
   @apply border-text-bg;
   @apply text-text;
   font-size: small;
+  padding: 10px, 10px, 10px, 10px;
 }
