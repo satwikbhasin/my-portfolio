@@ -47,6 +47,12 @@ export const Navigation: React.FC = () => {
 						>
 							contact
 						</Link>
+						<Link
+							href="/message"
+							className={`duration-200 ${pathName === '/message' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'}`}
+						>
+							message
+						</Link>
 					</div>
 
 					<Link
