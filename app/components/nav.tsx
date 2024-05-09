@@ -3,7 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { usePathname } from 'next/navigation'
-import { Typography } from "@mui/material";
 
 export const Navigation: React.FC = () => {
 	const pathName = usePathname()
@@ -49,7 +48,7 @@ export const Navigation: React.FC = () => {
 						</Link>
 						<Link
 							href="/message"
-							className={`duration-200 ${pathName === '/message' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100 font-kode-mono'}`}
+							className={`duration-200 ${pathName === '/message' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'} font-kode-mono`}
 						>
 							message
 						</Link>
