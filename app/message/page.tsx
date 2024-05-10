@@ -65,11 +65,11 @@ export default function MessageForm() {
                     onSubmit={handleFormSubmit}
                     className="container flex items-center justify-center min-h-screen px-4 mx-auto"
                 >
-                    <div className="grid w-full grid-cols-1 p-5 gap-1 mx-auto mt-32 xs:grid-cols-1 sm:mt-0 sm:grid-cols-1 md:grid-cols-1 lg:gap-10 lg:grid-cols-3 xl:grid-cols-3">
-                        <div className="flex flex-col gap-2 col-span-2">
-                            <div className="text-white flex flex-row items-center gap-1"><MessageSquare
-                                color="#6c6c74"
+                    <div className="grid w-full grid-cols-1 p-5 gap-5 mx-auto mt-32 xs:grid-cols-1 sm:mt-0 sm:grid-cols-1 md:grid-cols-1 lg:gap-0 lg:grid-cols-2 xl:grid-cols-2">
+                        <div className="flex flex-col gap-2">
+                            <div className="text-white flex flex-row items-center gap-2"><MessageSquare
                                 size={20}
+                                className="text-sea-green"
                             />Message</div>
                             <TextareaAutosize
                                 value={formData.message}
@@ -95,9 +95,9 @@ export default function MessageForm() {
                         </div>
                         <div className="flex flex-col gap-5 items-center" >
                             <div className="flex flex-col w-1/2 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
-                                <div className="text-white flex flex-row items-center gap-1"><User
-                                    color="#6c6c74"
+                                <div className="text-white flex flex-row items-center gap-2"><User
                                     size={20}
+                                    className="text-sea-green"
                                 />Name</div>
                                 <input
                                     value={formData.name}
@@ -109,6 +109,7 @@ export default function MessageForm() {
                                         overflow: "auto",
                                         color: "#6c6c74",
                                         backgroundColor: "#1f1f1f",
+                                        border: "1px solid #6c6c74",
                                         padding: 10,
                                         borderRadius: 5,
                                         width: "100%",
@@ -118,9 +119,9 @@ export default function MessageForm() {
                                 />
                             </div>
                             <div className="flex flex-col w-1/2 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
-                                <div className="text-white flex flex-row items-center gap-1"><Mail
-                                    color="#6c6c74"
+                                <div className="text-white flex flex-row items-center gap-2"><Mail
                                     size={20}
+                                    className="text-sea-green"
                                 />Email</div>
                                 <input
                                     value={formData.email}
@@ -128,6 +129,7 @@ export default function MessageForm() {
                                         overflow: "auto",
                                         color: "#6c6c74",
                                         backgroundColor: "#1f1f1f",
+                                        border: "1px solid #6c6c74",
                                         padding: 10,
                                         borderRadius: 5,
                                         width: "100%",
@@ -141,9 +143,9 @@ export default function MessageForm() {
                                 />
                             </div>
                             <div className="flex flex-col w-1/2 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
-                                <div className="text-white flex flex-row items-center gap-1"><Phone
-                                    color="#6c6c74"
+                                <div className="text-white flex flex-row items-center gap-2"><Phone
                                     size={20}
+                                    className="text-sea-green"
                                 />Phone (optional)</div>
                                 <PhoneInput
                                     value={formData.phone}
@@ -152,12 +154,17 @@ export default function MessageForm() {
                                     placeholder="Phone Number"
                                     inputStyle={{
                                         width: "100%",
+                                        color: "#6c6c74",
                                     }}
                                     className="gap-1"
+                                    style={{
+                                        border: "1px solid #6c6c74",
+                                        borderRadius: 5,
+                                    }}
                                 />
                             </div>
-                            <div className="flex flex-col w-1/2 gap-1 xs:w-1/2 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
-                                <button disabled={formData.message.trim() === "" || formData.email.trim() === "" || formData.name.trim() === ""} type="submit" className="flex bg-zinc-300 rounded-lg p-2 gap-2 w-full justify-center items-center disabled:bg-zinc-700">Send<Send size={18} /></button>
+                            <div className="flex flex-col w-1/2 gap-1 xs:w-1/2 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4" >
+                                <button disabled={formData.message.trim() === "" || formData.email.trim() === "" || formData.name.trim() === ""} type="submit" className="flex text-sea-green rounded-lg p-2 gap-2 w-full justify-center items-center bg-text-bg disabled:bg-text-bg disabled:text-text hover:bg-hover">Send<Send size={18} /></button>
                             </div>
                         </div>
                     </div>

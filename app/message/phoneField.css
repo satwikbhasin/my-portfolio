@@ -51,3 +51,7 @@
   font-size: small;
   padding: 10px, 10px, 10px, 10px;
 }
+
+.react-international-phone-country-selector-button__button-content{
+  padding: 10px;
+}
