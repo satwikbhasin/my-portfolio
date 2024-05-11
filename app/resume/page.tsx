@@ -19,12 +19,13 @@ export default function ResumeViewer() {
   return (
     <div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
       <Navigation />
-      <div className="container flex flex-col items-center justify-center py-20 mx-auto h-screen gap-2">
+      <div className="flex flex-col items-center justify-center py-20 h-screen gap-2 w-screen">
         <div
-          className="group rounded-lg overflow-hidden relative bg-blue-500"
+          className="group rounded-lg overflow-hidden relative w-3/4"
           onClick={() => {
             window.open("/resume.pdf", "_blank");
           }}
+          style={{ cursor: "pointer" }}
         >
           {resumeLoading && (
             <div className="absolute inset-0 flex items-center justify-center">
@@ -43,13 +44,14 @@ export default function ResumeViewer() {
             <View className="text-white opacity-0 group-hover:opacity-100" />
           </div>
         </div>
-        <div className="flex flex-row gap-2 mt-3 w-1/2 items-center grid grid-cols-3">
+        <div className="flex flex-row gap-5 mt-3 w-3/4 px-10 items-center grid lg:grid-cols-3 xl:grid-cols-3 sm:grid-cols-1 md:grid-cols-1 ">
           <Card>
             <div
               onClick={() => {
                 window.open("/resume.pdf", "_blank");
               }}
-              className="text-zinc-100 p-2 rounded-lg flex flex-row items-center justify-center hover:text-sea-green"
+              className="text-zinc-100 p-2 flex flex-row items-center justify-center hover:text-sea-green font-kode-mono"
+              style={{ fontSize: 15, cursor: "pointer" }}
             >
               View
               <View size={18} className="ml-2 text-sea-green" />
@@ -67,7 +69,8 @@ export default function ResumeViewer() {
                 link.click();
                 document.body.removeChild(link);
               }}
-              className="text-zinc-100 p-2 rounded-lg flex flex-row items-center justify-center hover:text-sea-green"
+              className="text-zinc-100 p-2 flex flex-row items-center justify-center hover:text-sea-green font-kode-mono"
+              style={{ fontSize: 15, cursor: "pointer" }}
             >
               {downloadTimeout ? (
                 <>
@@ -83,26 +86,27 @@ export default function ResumeViewer() {
             </div>
           </Card>
           <Card>
-          <div
-            onClick={() => {
-              navigator.clipboard.writeText(window.location.href);
-              setCopyTimeout(true);
-              setTimeout(() => setCopyTimeout(false), 3000);
-            }}
-            className="text-zinc-100 p-2 rounded-lg flex flex-row items-center justify-center hover:text-sea-green"
-          >
-            {copyTimeout ? (
-              <>
-                Copy
-                <ClipboardCheck size={18} className="ml-2 text-sea-green" />
-              </>
-            ) : (
-              <>
-                Copy
-                <Copy size={18} className="ml-2 text-sea-green" />
-              </>
-            )}
-          </div>
+            <div
+              onClick={() => {
+                navigator.clipboard.writeText(window.location.href);
+                setCopyTimeout(true);
+                setTimeout(() => setCopyTimeout(false), 3000);
+              }}
+              className="text-zinc-100 p-2 flex flex-row items-center justify-center hover:text-sea-green font-kode-mono"
+              style={{ fontSize: 15, cursor: "pointer" }}
+            >
+              {copyTimeout ? (
+                <>
+                  Copy
+                  <ClipboardCheck size={18} className="ml-2 text-sea-green" />
+                </>
+              ) : (
+                <>
+                  Copy
+                  <Copy size={18} className="ml-2 text-sea-green" />
+                </>
+              )}
+            </div>
           </Card>
         </div>
       </div>

@@ -30,8 +30,8 @@ export default function MessageForm() {
                 setShowEmailInvalidAlert(false);
                 setShowMessageSentAlert(false);
                 setShowMessageNotSentAlert(false);
-                // await handleSubmit(formData);
-                testUndoSend(formData);
+                await handleSubmit(formData);
+                // testUndoSend(formData);
             }, 6000);
             setTimeoutId(id);
         };
@@ -155,7 +155,7 @@ export default function MessageForm() {
                                 <PhoneInput
                                     value={formData.phone}
                                     onChange={(phone) => setFormData({ ...formData, phone })}
-                                    defaultCountry="US"
+                                    defaultCountry="us"
                                     placeholder="Phone Number"
                                     inputStyle={{
                                         width: "100%",
