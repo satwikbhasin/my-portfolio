@@ -68,7 +68,7 @@ export default function MessageForm() {
                 >
                     <div className="grid w-full grid-cols-1 p-5 gap-5 mx-auto mt-32 xs:grid-cols-1 sm:mt-0 sm:grid-cols-1 md:grid-cols-1 lg:gap-5 lg:grid-cols-2 xl:grid-cols-2">
                         <div className="flex flex-col gap-2">
-                            <div className="text-white flex flex-row items-center gap-2"><MessageSquare
+                            <div className="text-white flex flex-row items-center gap-2 font-kode-mono" style={{ fontSize: 15 }}><MessageSquare
                                 size={20}
                                 className="text-sea-green"
                             />Message</div>
@@ -97,7 +97,7 @@ export default function MessageForm() {
                         </div>
                         <div className="flex flex-col gap-5 items-center" >
                             <div className="flex flex-col w-3/4 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
-                                <div className="text-white flex flex-row items-center gap-2"><User
+                                <div className="text-white flex flex-row items-center gap-2 font-kode-mono" style={{ fontSize: 15 }}><User
                                     size={20}
                                     className="text-sea-green"
                                 />Name</div>
@@ -122,7 +122,7 @@ export default function MessageForm() {
                                 />
                             </div>
                             <div className="flex flex-col w-3/4 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
-                                <div className="text-white flex flex-row items-center gap-2"><Mail
+                                <div className="text-white flex flex-row items-center gap-2 font-kode-mono" style={{ fontSize: 15 }}><Mail
                                     size={20}
                                     className="text-sea-green"
                                 />Email</div>
@@ -147,10 +147,11 @@ export default function MessageForm() {
                                 />
                             </div>
                             <div className="flex flex-col w-3/4 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
-                                <div className="text-white flex flex-row items-center gap-2"><Phone
-                                    size={20}
-                                    className="text-sea-green"
-                                />Phone (optional)</div>
+                                <div className="text-white flex flex-row items-center gap-2 font-kode-mono" style={{ fontSize: 15 }}>
+                                    <Phone size={20} className="text-sea-green" />
+                                    Phone
+                                    <span style={{ fontSize: 10, fontStyle: "italic" }} className="text-text"> - optional </span>
+                                </div>
                                 <PhoneInput
                                     value={formData.phone}
                                     onChange={(phone) => setFormData({ ...formData, phone })}
@@ -171,7 +172,7 @@ export default function MessageForm() {
                             </div>
                             <div style={{ position: "relative", marginTop: "20px", zIndex: 0, }} className={`flex flex-col w-3/4 gap-1 xs:w-1/2 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4`} >
                                 <Card>
-                                    <button type="submit" className="flex text-sea-green rounded-lg p-2 gap-2 w-full justify-center items-center">Send<Send size={18} /></button>
+                                    <button type="submit" className="flex text-sea-green rounded-lg p-2 gap-2 w-full justify-center items-center font-kode-mono">Send<Send size={18} /></button>
                                 </Card>
                                 {showMessageSentAlert && (
                                     <Snackbar
