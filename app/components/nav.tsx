@@ -28,7 +28,7 @@ export const Navigation: React.FC = () => {
 					}`}
 			>
 				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
-					<div className="flex justify-between gap-8">
+					<div className="flex justify-between gap-6 overflow-x-auto whitespace-nowrap">
 						<Link
 							href="/projects"
 							className={`duration-200 ${pathName === '/projects' ? 'text-sea-green' : 'text-zinc-400 hover:text-zinc-100'} font-kode-mono`}>

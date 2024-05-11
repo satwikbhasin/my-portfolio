@@ -7,9 +7,9 @@ import { useForm } from '@formspree/react';
 import { PhoneInput } from "react-international-phone";
 import 'react-international-phone/style.css';
 import './phoneField.css';
+import { Card } from "../components/card";
 
 import { testUndoSend } from "./test";
-
 
 export default function MessageForm() {
     const [formData, setFormData] = useState({ message: "", name: "", email: "", phone: "" });
@@ -30,8 +30,8 @@ export default function MessageForm() {
                 setShowEmailInvalidAlert(false);
                 setShowMessageSentAlert(false);
                 setShowMessageNotSentAlert(false);
-                await handleSubmit(formData);
-                // testUndoSend(formData);
+                // await handleSubmit(formData);
+                testUndoSend(formData);
             }, 6000);
             setTimeoutId(id);
         };
@@ -48,6 +48,7 @@ export default function MessageForm() {
 
     const undoSend = (
         <button onClick={() => {
+            setShowMessageSentAlert(false);
             setShowMessageNotSentAlert(true);
             if (timeoutId) {
                 clearTimeout(timeoutId);
@@ -65,7 +66,7 @@ export default function MessageForm() {
                     onSubmit={handleFormSubmit}
                     className="container flex items-center justify-center min-h-screen px-4 mx-auto"
                 >
-                    <div className="grid w-full grid-cols-1 p-5 gap-5 mx-auto mt-32 xs:grid-cols-1 sm:mt-0 sm:grid-cols-1 md:grid-cols-1 lg:gap-0 lg:grid-cols-2 xl:grid-cols-2">
+                    <div className="grid w-full grid-cols-1 p-5 gap-5 mx-auto mt-32 xs:grid-cols-1 sm:mt-0 sm:grid-cols-1 md:grid-cols-1 lg:gap-5 lg:grid-cols-2 xl:grid-cols-2">
                         <div className="flex flex-col gap-2">
                             <div className="text-white flex flex-row items-center gap-2"><MessageSquare
                                 size={20}
@@ -94,7 +95,7 @@ export default function MessageForm() {
                             />
                         </div>
                         <div className="flex flex-col gap-5 items-center" >
-                            <div className="flex flex-col w-1/2 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
+                            <div className="flex flex-col w-3/4 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
                                 <div className="text-white flex flex-row items-center gap-2"><User
                                     size={20}
                                     className="text-sea-green"
@@ -118,7 +119,7 @@ export default function MessageForm() {
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                 />
                             </div>
-                            <div className="flex flex-col w-1/2 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
+                            <div className="flex flex-col w-3/4 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
                                 <div className="text-white flex flex-row items-center gap-2"><Mail
                                     size={20}
                                     className="text-sea-green"
@@ -142,7 +143,7 @@ export default function MessageForm() {
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                 />
                             </div>
-                            <div className="flex flex-col w-1/2 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
+                            <div className="flex flex-col w-3/4 gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4">
                                 <div className="text-white flex flex-row items-center gap-2"><Phone
                                     size={20}
                                     className="text-sea-green"
@@ -150,7 +151,7 @@ export default function MessageForm() {
                                 <PhoneInput
                                     value={formData.phone}
                                     onChange={(phone) => setFormData({ ...formData, phone })}
-                                    defaultCountry="us"
+                                    defaultCountry="US"
                                     placeholder="Phone Number"
                                     inputStyle={{
                                         width: "100%",
@@ -161,36 +162,48 @@ export default function MessageForm() {
                                         border: "1px solid #6c6c74",
                                         borderRadius: 5,
                                     }}
+                                    required={false}
                                 />
                             </div>
-                            <div className="flex flex-col w-1/2 gap-1 xs:w-1/2 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4" >
-                                <button disabled={formData.message.trim() === "" || formData.email.trim() === "" || formData.name.trim() === ""} type="submit" className="flex text-sea-green rounded-lg p-2 gap-2 w-full justify-center items-center bg-text-bg disabled:bg-text-bg disabled:text-text hover:bg-hover">Send<Send size={18} /></button>
+                            <div style={{ position: "relative", marginTop: "20px" }} className={`flex flex-col w-3/4 gap-1 xs:w-1/2 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4 ${(formData.message.trim() === "" || formData.email.trim() === "" || formData.name.trim() === "") ? 'disable-hover' : ''}`} >
+                                <Card>
+                                    <button disabled={formData.message.trim() === "" || formData.email.trim() === "" || formData.name.trim() === ""} type="submit" className="flex text-white rounded-lg p-2 gap-2 w-full justify-center items-center disabled:bg-text-bg disabled:text-text">Send<Send size={18} className="text-sea-green" /></button>
+                                </Card>
+                                {showMessageSentAlert && (
+                                    <Snackbar
+                                        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                                        onClose={() => { setShowMessageSentAlert(false) }}
+                                        open={showMessageSentAlert}
+                                        autoHideDuration={6000}
+                                        action={undoSend}
+                                        message="Message Sent"
+                                        style={{ position: 'absolute', top: '120%' }}
+                                    />
+                                )}
+                                {showEmailInvalidAlert && (
+                                    <Snackbar
+                                        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                                        onClose={() => { setShowEmailInvalidAlert(false) }}
+                                        open={showEmailInvalidAlert}
+                                        autoHideDuration={6000}
+                                        message="Invalid Email Address"
+                                        style={{ position: 'absolute', top: '120%' }}
+                                    />
+                                )}
+                                {showMessageNotSentAlert && (
+                                    <Snackbar
+                                        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                                        onClose={() => { setShowMessageNotSentAlert(false); }}
+                                        open={showMessageNotSentAlert}
+                                        autoHideDuration={6000}
+                                        message="Message not sent"
+                                        style={{ position: 'absolute', top: '120%' }}
+                                    />
+                                )}
                             </div>
                         </div>
                     </div>
                 </form>
-                <Snackbar
-                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                    onClose={() => { setShowMessageSentAlert(false) }}
-                    open={showMessageSentAlert}
-                    autoHideDuration={6000}
-                    action={undoSend}
-                    message="Message Sent"
-                />
-                <Snackbar
-                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                    onClose={() => { setShowEmailInvalidAlert(false) }}
-                    open={showEmailInvalidAlert}
-                    autoHideDuration={6000}
-                    message="Invalid Email Address"
-                />
-                <Snackbar
-                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                    onClose={() => { setShowMessageNotSentAlert(false); }}
-                    open={showMessageNotSentAlert}
-                    autoHideDuration={6000}
-                    message="Message not sent"
-                />
             </div>
         </div>
     );
