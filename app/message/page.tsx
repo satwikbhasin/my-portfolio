@@ -87,6 +87,7 @@ export default function MessageForm() {
                                     fontSize: "small",
                                     width: "100%"
                                 }}
+                                className="font-kode-mono placeholder-input"
                                 id="message"
                                 name="message"
                                 placeholder="Type your message here"
@@ -114,8 +115,9 @@ export default function MessageForm() {
                                         padding: 10,
                                         borderRadius: 5,
                                         width: "100%",
-                                        fontSize: "small"
+                                        fontSize: "small",
                                     }}
+                                    className="font-kode-mono placeholder-input"
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                 />
                             </div>
@@ -136,6 +138,7 @@ export default function MessageForm() {
                                         width: "100%",
                                         fontSize: "small"
                                     }}
+                                    className="font-kode-mono placeholder-input"
                                     type="email"
                                     name="email"
                                     placeholder="Email Address"
@@ -157,15 +160,16 @@ export default function MessageForm() {
                                         width: "100%",
                                         color: "#6c6c74",
                                     }}
-                                    className="gap-1"
+                                    className="gap-1 font-kode-mono placeholder-input"
                                     style={{
                                         border: "1px solid #6c6c74",
                                         borderRadius: 5,
+                                        zIndex: 1,
                                     }}
                                     required={false}
                                 />
                             </div>
-                            <div style={{ position: "relative", marginTop: "20px" }} className={`flex flex-col w-3/4 gap-1 xs:w-1/2 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4`} >
+                            <div style={{ position: "relative", marginTop: "20px", zIndex: 0, }} className={`flex flex-col w-3/4 gap-1 xs:w-1/2 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4`} >
                                 <Card>
                                     <button type="submit" className="flex text-sea-green rounded-lg p-2 gap-2 w-full justify-center items-center">Send<Send size={18} /></button>
                                 </Card>

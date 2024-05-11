@@ -29,6 +29,9 @@ module.exports = {
 					},
 				},
 			},
+			placeholderColor: {
+				"input": "#6C6C74",
+			},
 			fontFamily: {
 				sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
 				display: ["var(--font-calsans)"],
@@ -36,7 +39,7 @@ module.exports = {
 			},
 			fontWeight: {
 				'kode-mono': '600',
-			  },
+			},
 			backgroundImage: {
 				"gradient-radial":
 					"radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))",
@@ -119,6 +122,7 @@ module.exports = {
 		extend: {
 			opacity: ['group-hover'],
 		},
+		placeholderColor: ['responsive', 'dark', 'focus', 'hover', 'active'],
 	},
 	plugins: [
 		require("@tailwindcss/typography"),
