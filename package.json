@@ -17,7 +17,6 @@
     "@upstash/redis": "^1.23.3",
     "@vercel/analytics": "^1.2.2",
     "contentlayer": "^0.3.4",
-    "esbuild": "0.18",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.284.0",
     "markdown-wasm": "^1.2.0",
