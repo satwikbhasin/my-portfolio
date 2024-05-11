@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
+import { Card } from "../components/card";
 
 export default function ResumeViewer() {
   const [resumeLoading, setResumeLoading] = useState(true);
@@ -20,7 +21,7 @@ export default function ResumeViewer() {
       <Navigation />
       <div className="container flex flex-col items-center justify-center py-20 mx-auto h-screen gap-2">
         <div
-          className="group rounded-lg overflow-hidden relative"
+          className="group rounded-lg overflow-hidden relative bg-blue-500"
           onClick={() => {
             window.open("/resume.pdf", "_blank");
           }}
@@ -42,23 +43,31 @@ export default function ResumeViewer() {
             <View className="text-white opacity-0 group-hover:opacity-100" />
           </div>
         </div>
-        <div className="flex flex-row gap-2 mt-3">
-          <button
-            onClick={() => {
-              window.open("/resume.pdf", "_blank");
-            }}
-            className="bg-zinc-800 text-zinc-100 p-2 rounded-lg flex items-center hover:text-sea-green"
-          >
-            View
-            <View size={18} className="ml-2 text-sea-green" />
-          </button>
-          <a href="/resume.pdf" download="SatwikBhasin-Resume.pdf">
-            <button
+        <div className="flex flex-row gap-2 mt-3 w-1/2 items-center grid grid-cols-3">
+          <Card>
+            <div
+              onClick={() => {
+                window.open("/resume.pdf", "_blank");
+              }}
+              className="text-zinc-100 p-2 rounded-lg flex flex-row items-center justify-center hover:text-sea-green"
+            >
+              View
+              <View size={18} className="ml-2 text-sea-green" />
+            </div>
+          </Card>
+          <Card>
+            <div
               onClick={() => {
                 setDownloadTimeout(true);
                 setTimeout(() => setDownloadTimeout(false), 3000);
+                const link = document.createElement('a');
+                link.href = '/resume.pdf';
+                link.download = 'SatwikBhasin-Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
               }}
-              className="bg-zinc-800 text-zinc-100 p-2 rounded-lg flex items-center hover:text-sea-green"
+              className="text-zinc-100 p-2 rounded-lg flex flex-row items-center justify-center hover:text-sea-green"
             >
               {downloadTimeout ? (
                 <>
@@ -71,15 +80,16 @@ export default function ResumeViewer() {
                   <Download size={18} className="ml-2 text-sea-green" />
                 </>
               )}
-            </button>
-          </a>
-          <button
+            </div>
+          </Card>
+          <Card>
+          <div
             onClick={() => {
               navigator.clipboard.writeText(window.location.href);
               setCopyTimeout(true);
               setTimeout(() => setCopyTimeout(false), 3000);
             }}
-            className="bg-zinc-800 text-zinc-100 p-2 rounded-lg flex items-center hover:text-sea-green"
+            className="text-zinc-100 p-2 rounded-lg flex flex-row items-center justify-center hover:text-sea-green"
           >
             {copyTimeout ? (
               <>
@@ -92,7 +102,8 @@ export default function ResumeViewer() {
                 <Copy size={18} className="ml-2 text-sea-green" />
               </>
             )}
-          </button>
+          </div>
+          </Card>
         </div>
       </div>
     </div>
