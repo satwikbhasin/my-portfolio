@@ -165,9 +165,9 @@ export default function MessageForm() {
                                     required={false}
                                 />
                             </div>
-                            <div style={{ position: "relative", marginTop: "20px" }} className={`flex flex-col w-3/4 gap-1 xs:w-1/2 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4 ${(formData.message.trim() === "" || formData.email.trim() === "" || formData.name.trim() === "") ? 'disable-hover' : ''}`} >
+                            <div style={{ position: "relative", marginTop: "20px" }} className={`flex flex-col w-3/4 gap-1 xs:w-1/2 sm:w-1/2 md:w-1/2 lg:w-full xl:w-3/4`} >
                                 <Card>
-                                    <button disabled={formData.message.trim() === "" || formData.email.trim() === "" || formData.name.trim() === ""} type="submit" className="flex text-white rounded-lg p-2 gap-2 w-full justify-center items-center disabled:bg-text-bg disabled:text-text">Send<Send size={18} className="text-sea-green" /></button>
+                                    <button type="submit" className="flex text-sea-green rounded-lg p-2 gap-2 w-full justify-center items-center">Send<Send size={18} /></button>
                                 </Card>
                                 {showMessageSentAlert && (
                                     <Snackbar
