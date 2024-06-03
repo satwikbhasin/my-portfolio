@@ -4,6 +4,7 @@ import LocalFont from "next/font/local";
 import { Metadata } from "next";
 // import { Analytics } from "./components/analytics";
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: {
@@ -68,6 +69,7 @@ export default function RootLayout({
       >
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
