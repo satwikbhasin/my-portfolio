@@ -5,7 +5,7 @@ import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
 import { Redis } from "@upstash/redis";
-import { Eye } from "lucide-react";
+import { Eye, Smartphone, Monitor } from "lucide-react";
 
 const redis = Redis.fromEnv();
 
@@ -83,6 +83,11 @@ export default async function ProjectsPage() {
                 </h2>
                 <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                   {featured.description}
+                </p>
+                <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                  <span className="font-bold text-sm">Best Experience on</span>
+                  {featured.mobileSupported && <Smartphone className="inline-block w-4 h-4 ml-2" color="#33d49a" />}
+                  {featured.desktopSupported && <Monitor className="inline-block w-4 h-4 ml-2" color="#33d49a" />}
                 </p>
                 <div className="absolute bottom-4 md:bottom-8">
                   <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block" style={{ color: "#33d49a" }}>

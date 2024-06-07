@@ -1,6 +1,7 @@
 import type { Project } from "@/.contentlayer/generated";
 import Link from "next/link";
-import { Eye, View } from "lucide-react";
+import { Eye, Smartphone, Monitor } from "lucide-react";
+import { Box } from "@mui/material";
 
 type Props = {
 	project: Project;
@@ -33,6 +34,11 @@ export const Article: React.FC<Props> = ({ project, views }) => {
 				</h2>
 				<p className="z-20 mt-4 text-sm  duration-1000 text-zinc-400 group-hover:text-zinc-200">
 					{project.description}
+				</p>
+				<p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+					<span className="font-bold text-sm">Best Experience on</span>
+					{project.mobileSupported && <Smartphone className="inline-block w-4 h-4 ml-2" color="#33d49a" />}
+					{project.desktopSupported && <Monitor className="inline-block w-4 h-4 ml-2" color="#33d49a" />}
 				</p>
 			</article>
 		</Link>
