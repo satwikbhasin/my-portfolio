@@ -22,7 +22,7 @@ export default async function ProjectsPage() {
 
   const featured = allProjects.find((project) => project.slug === "evalutron")!;
   const top2 = allProjects.find((project) => project.slug === "unichat")!;
-  const top3 = allProjects.find((project) => project.slug === "virtualvault")!;
+  const top3 = allProjects.find((project) => project.slug === "texttopdf")!;
   const sorted = allProjects
     .filter((p) => p.published)
     .filter(
