@@ -12,19 +12,19 @@ mobileSupported: true
 # TODO Application
 
 Welcome to TODO Application. This project is a full-stack application, featuring a React-based frontend and a Django backend, providing a seamless and interactive user experience for managing todos.
-  
-<details>
-  <summary><h2>Features</h2></summary>
-  
-  - **User Authentication**: Secure login and registration functionality to keep your todos private.
-  - **Create, Read, Update, Delete (CRUD) Todos**: Full management of your todo tasks.
-  - **Light and Dark Mode**: Switch between light and dark themes to suit your preference.
-  - **Searching**: Easily find tasks by searching any keyword from the todo task.
-  - **Responsive Design**: A user-friendly interface that adapts to different screen sizes, ensuring a great experience on both desktop and mobile devices.
-  - **Progressive Web App (PWA)**: The frontend is designed as a PWA, allowing for an app-like experience on supported devices.
-</details>
 
-  
+<details>
+  <summary>
+    <h2>Features</h2>
+  </summary>
+  - **User Authentication**: Secure login and registration functionality to keep
+  your todos private. - **Create, Read, Update, Delete (CRUD) Todos**: Full management
+  of your todo tasks. - **Light and Dark Mode**: Switch between light and dark themes
+  to suit your preference. - **Searching**: Easily find tasks by searching any keyword
+  from the todo task. - **Responsive Design**: A user-friendly interface that adapts
+  to different screen sizes, ensuring a great experience on both desktop and mobile
+  devices. - **Progressive Web App (PWA)**: The frontend is designed as a PWA, allowing
+  for an app-like experience on supported devices.
 </details>
 
 <details>
@@ -32,15 +32,16 @@ Welcome to TODO Application. This project is a full-stack application, featuring
 
 ### Frontend
 
-  The frontend is built with React, utilizing Create React App for scaffolding. Styling is achieved with Emotion Styled Components and Material-UI for a modern look and feel.
-  
+The frontend is built with React, utilizing Create React App for scaffolding. Styling is achieved with Emotion Styled Components and Material-UI for a modern look and feel.
+
 ### Backend
 
-  The backend is powered by Django, a high-level Python web framework that encourages rapid development and clean, pragmatic design. It handles user authentication, data persistence in SQLite, and serves the RESTful API endpoints for the frontend.
-  
+The backend is powered by Django, a high-level Python web framework that encourages rapid development and clean, pragmatic design. It handles user authentication, data persistence in SQLite, and serves the RESTful API endpoints for the frontend.
+
 ### Deployment
-  - The frontend of the application is hosted on AWS S3 with CloudFront as the CDN. This setup ensures fast and reliable access to the application worldwide.
-  - The backend is deployed on an AWS EC2 instance. This provides a scalable and reliable server environment for handling the application's backend services, including user authentication, data persistence, and serving RESTful API endpoints.
+
+- The frontend of the application is hosted on AWS S3 with CloudFront as the CDN. This setup ensures fast and reliable access to the application worldwide.
+- The backend is deployed on an AWS EC2 instance. This provides a scalable and reliable server environment for handling the application's backend services, including user authentication, data persistence, and serving RESTful API endpoints.
 </details>
 
 <details>
@@ -56,7 +57,7 @@ Users can switch between light and dark themes to suit their preference, enhanci
 
 ### User Authentication
 
-Secure login and registration functionality to keep your todos private. The application uses token-based authentication to ensure that only authorized users can access their todos. 
+Secure login and registration functionality to keep your todos private. The application uses token-based authentication to ensure that only authorized users can access their todos.
 
 ### Create, Read, Update, Delete (CRUD) Todos
 
@@ -73,10 +74,11 @@ A user-friendly interface that adapts to different screen sizes, ensuring a grea
 ### Statistics
 
 The application includes features for displaying statistics related to the user's todos. This helps users track their productivity and manage their tasks more effectively.
-  
+
 ### Error Handling and Validation
 
 Robust error handling and validation mechanisms ensure that the application operates smoothly. Users receive clear feedback in case of errors or invalid input, enhancing the overall user experience.
+
 </details>
 
 <details>
@@ -104,7 +106,7 @@ Enable synchronization with popular calendar services (e.g., Google Calendar, Ou
 
 Enhance the statistics and analytics section with predictive analytics and data visualization. Provide insights into task completion rates, productivity trends, and suggestions for optimizing task management.
 
-### Offline Access 
+### Offline Access
 
 Further enhance the PWA capabilities by enabling offline access to todos. Implement offline storage and synchronization so users can continue managing tasks even without an internet connection.
 
@@ -115,8 +117,8 @@ Introduce features for setting task dependencies and reminders. Allow users to c
 ### Voice Command Integration
 
 Incorporate voice command capabilities for hands-free task management. Users can add, update, or delete todos using voice commands, enhancing accessibility and convenience.
-</details>
 
+</details>
 
 <details>
   <summary><h2>Project Architecture</h2></summary>
@@ -178,26 +180,31 @@ The frontend uses environment variables (e.g., `REACT_APP_BACKEND_API_URL`) to c
 ### Routing
 
 The frontend uses React Router for navigation between different components (Dashboard, Authentication, NotFound), with routes defined in `AppRouter.jsx`. Access to certain routes is controlled based on the authentication state, redirecting users to the appropriate component based on whether they are logged in.
+
 </details>
 
-
 <details>
+
   <summary><h2>Deployment Process</h2></summary>
 
-  ### Backend
+### Backend
 
-1. **Deploy on EC2**: 
+1. **Deploy on EC2**:
+
    - Pulled the latest version of the backend code from the Git repository to an AWS EC2 instance.
 
-2. **Run Django Server with Gunicorn**: 
+2. **Run Django Server with Gunicorn**:
+
    - Used Gunicorn to serve the Django application in the background using `&`. This can be done with a command like:
      ```bash
      gunicorn --workers 3 todoproject.wsgi:application &
      ```
 
-3. **Set Up Nginx as a Reverse Proxy**: 
+3. **Set Up Nginx as a Reverse Proxy**:
+
    - Configured Nginx to forward requests to the Gunicorn server. This provides an additional layer of security and handles static files.
    - Example Nginx configuration:
+
      ```nginx
      server {
          listen 80;
@@ -223,13 +230,16 @@ The frontend uses React Router for navigation between different components (Dash
 
 ### Frontend
 
-1. **Build the React App**: 
+1. **Build the React App**:
+
    - Created a production build of the React application locally using `npm run build`.
 
-2. **Upload to S3**: 
+2. **Upload to S3**:
+
    - Uploaded the build directory to an AWS S3 bucket configured to host static websites.
 
-3. **Set Up CloudFront**: 
+3. **Set Up CloudFront**:
    - Configured CloudFront to use the S3 bucket as the origin.
    - Rewrited redirection rules for the bucket to handle client-side routing properly.
+
 </details>
