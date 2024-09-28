@@ -17,9 +17,9 @@ export default function ResumeViewer() {
   const [copyTimeout, setCopyTimeout] = useState(false);
   const [downloadTimeout, setDownloadTimeout] = useState(false);
   return (
-    <div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
+    <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-screen">
       <Navigation />
-      <div className="flex flex-col items-center justify-center py-20 h-screen gap-2 w-screen">
+      <div className="flex flex-col items-center justify-center gap-2 h-screen">
         <div
           className="group rounded-lg overflow-hidden relative w-3/4"
           onClick={() => {
