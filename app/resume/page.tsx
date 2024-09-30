@@ -21,7 +21,7 @@ export default function ResumeViewer() {
       <Navigation />
       <div className="flex items-center justify-center flex-col w-screen h-screen pt-24 pb-10">
         <div
-          className="group rounded-lg overflow-hidden relative w-3/4 md:w-1/2"
+          className="group rounded-lg overflow-hidden relative w-3/5"
           onClick={() => {
             window.open("/resume.pdf", "_blank");
           }}
