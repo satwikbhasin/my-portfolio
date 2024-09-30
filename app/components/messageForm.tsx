@@ -58,10 +58,10 @@ export default function MessageForm() {
         <div>
             <form
                 onSubmit={handleFormSubmit}
-                className="flex items-center justify-center pl-32 pr-32"
+                className="flex items-center justify-center pl-10 pr-10 sm:pl-32 sm:pr-32"
             >
-                <div className="grid w-full grid-cols-1 gap-5 xs:grid-cols-1 sm:mt-0 sm:grid-cols-1 md:grid-cols-3 lg:gap-5 lg:grid-cols-3 xl:grid-cols-3">
-                    <div className="flex flex-col gap-2 col-span-2">
+                <div className="grid w-full grid-cols-1 xs:grid-cols-1 sm:mt-0 sm:grid-cols-1 md:grid-cols-3 lg:gap-5 lg:grid-cols-3 xl:grid-cols-3">
+                    <div className="flex flex-col gap-2 col-span-2 md:mr-5 mb-5 md:mb-0">
                         <div className="text-white flex flex-row items-center gap-2 font-kode-mono" style={{ fontSize: 15 }}><MessageSquare
                             size={20}
                             className="text-sea-green"
@@ -89,8 +89,8 @@ export default function MessageForm() {
                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         />
                     </div>
-                    <div className="flex flex-col gap-5 col-span-1 items-center">
-                        <div className="flex flex-col gap-1 w-3/4 md:w-full">
+                    <div className="flex flex-col gap-5 col-span-1 items-center w-full">
+                        <div className="flex flex-col gap-1 w-full">
                             <div className="text-white flex flex-row items-center gap-2 font-kode-mono" style={{ fontSize: 15 }}>
                                 <User
                                     size={20}
@@ -117,7 +117,7 @@ export default function MessageForm() {
                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             />
                         </div>
-                        <div className="flex flex-col gap-1 w-3/4 md:w-full">
+                        <div className="flex flex-col gap-1 w-full">
                             <div className="text-white flex flex-row items-center gap-2 font-kode-mono" style={{ fontSize: 15 }}><Mail
                                 size={20}
                                 className="text-sea-green"
@@ -142,7 +142,7 @@ export default function MessageForm() {
                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             />
                         </div>
-                        <div className="flex flex-col gap-1 w-3/4 md:w-full">
+                        <div className="flex flex-col gap-1 w-full">
                             <div className="text-white flex flex-row items-center gap-2 font-kode-mono" style={{ fontSize: 15 }}>
                                 <Phone size={20} className="text-sea-green" />
                                 Phone
@@ -166,7 +166,7 @@ export default function MessageForm() {
                                 required={false}
                             />
                         </div>
-                        <div style={{ position: "relative", marginTop: "20px", zIndex: 0, }} className="flex flex-col gap-1 w-3/4 md:w-full" >
+                        <div style={{ position: "relative", marginTop: "20px", zIndex: 0, }} className="flex flex-col gap-1 w-full" >
                             <Card>
                                 <button type="submit" className="flex text-sea-green rounded-lg p-2 gap-2 w-full justify-center items-center font-kode-mono">Send<Send size={18} /></button>
                             </Card>
