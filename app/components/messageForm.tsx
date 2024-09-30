@@ -1,15 +1,12 @@
 "use client"
 import { TextareaAutosize, Snackbar, Alert } from "@mui/material";
 import { useState } from 'react';
-import { Navigation } from "../components/nav";
 import { MessageSquare, User, Mail, Phone, Send } from "lucide-react";
 import { useForm } from '@formspree/react';
 import { PhoneInput } from "react-international-phone";
 import 'react-international-phone/style.css';
-import './phoneField.css';
+import '../styling/phoneField.css';
 import { Card } from "../components/card";
-
-import { testUndoSend } from "./test";
 
 export default function MessageForm() {
     const [formData, setFormData] = useState({ message: "", name: "", email: "", phone: "" });
@@ -31,7 +28,6 @@ export default function MessageForm() {
                 setShowMessageSentAlert(false);
                 setShowMessageNotSentAlert(false);
                 await handleSubmit(formData);
-                // testUndoSend(formData);
             }, 6000);
             setTimeoutId(id);
         };
@@ -62,9 +58,9 @@ export default function MessageForm() {
         <div>
             <form
                 onSubmit={handleFormSubmit}
-                className="container flex items-center justify-center min-w-screen mx-auto"
+                className="flex items-center justify-center pl-10 pr-10"
             >
-                <div className="grid w-full  grid-cols-1 gap-5 mt-32 xs:grid-cols-1 sm:mt-0 sm:grid-cols-1 md:grid-cols-1 lg:gap-5 lg:grid-cols-3 xl:grid-cols-3">
+                <div className="grid w-full grid-cols-1 gap-5 xs:grid-cols-1 sm:mt-0 sm:grid-cols-1 md:grid-cols-3 lg:gap-5 lg:grid-cols-3 xl:grid-cols-3">
                     <div className="flex flex-col gap-2 col-span-2">
                         <div className="text-white flex flex-row items-center gap-2 font-kode-mono" style={{ fontSize: 15 }}><MessageSquare
                             size={20}
@@ -94,7 +90,7 @@ export default function MessageForm() {
                         />
                     </div>
                     <div className="flex flex-col gap-5 col-span-1 items-center">
-                        <div className="flex flex-col gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full">
+                        <div className="flex flex-col gap-1 w-3/4 md:w-full">
                             <div className="text-white flex flex-row items-center gap-2 font-kode-mono" style={{ fontSize: 15 }}>
                                 <User
                                     size={20}
@@ -121,7 +117,7 @@ export default function MessageForm() {
                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             />
                         </div>
-                        <div className="flex flex-col gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full">
+                        <div className="flex flex-col gap-1 w-3/4 md:w-full">
                             <div className="text-white flex flex-row items-center gap-2 font-kode-mono" style={{ fontSize: 15 }}><Mail
                                 size={20}
                                 className="text-sea-green"
@@ -146,7 +142,7 @@ export default function MessageForm() {
                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             />
                         </div>
-                        <div className="flex flex-col gap-1 xs:w-1/3 sm:w-1/2 md:w-1/2 lg:w-full">
+                        <div className="flex flex-col gap-1 w-3/4 md:w-full">
                             <div className="text-white flex flex-row items-center gap-2 font-kode-mono" style={{ fontSize: 15 }}>
                                 <Phone size={20} className="text-sea-green" />
                                 Phone
@@ -170,7 +166,7 @@ export default function MessageForm() {
                                 required={false}
                             />
                         </div>
-                        <div style={{ position: "relative", marginTop: "20px", zIndex: 0, }} className={`flex flex-col gap-1 xs:w-1/2 sm:w-1/2 md:w-1/2 lg:w-full`} >
+                        <div style={{ position: "relative", marginTop: "20px", zIndex: 0, }} className="flex flex-col gap-1 w-3/4 md:w-full" >
                             <Card>
                                 <button type="submit" className="flex text-sea-green rounded-lg p-2 gap-2 w-full justify-center items-center font-kode-mono">Send<Send size={18} /></button>
                             </Card>
