@@ -10,7 +10,7 @@ import { Card } from "../components/card";
 
 export default function MessageForm() {
     const [formData, setFormData] = useState({ message: "", name: "", email: "", phone: "" });
-    const [state, handleSubmit] = useForm("mleqzvle");
+    const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_TOKEN || "");
     const [showMessageSentAlert, setShowMessageSentAlert] = useState(false);
     const [showEmailInvalidAlert, setShowEmailInvalidAlert] = useState(false);
     const [showMessageNotSentAlert, setShowMessageNotSentAlert] = useState(false);
