@@ -84,19 +84,19 @@ export default function Contact() {
 	return (
 		<div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-screen overflow-scroll">
 			<Navigation />
-			<div className="flex items-center flex-col w-screen pt-24 pb-10 gap-3 md:pr-10 md:pl-10">
-				<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl pl-10 w-screen">
+			<div className="flex items-center flex-col w-screen pt-24 pb-10 gap-3 md:pr-32 md:pl-32">
+				<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl pl-6 md:pl-32 w-screen">
 					Social
 				</h2>
 				<div className="w-full h-px bg-zinc-800 mb-5" />
 				<div className="flex items-center flex-col w-screen gap-5 mb-10">
-					<div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-16 w-3/4 md:w-screen md:pl-10 md:pr-10">
+					<div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-6 w-3/4 md:w-screen md:pl-32 md:pr-32">
 						{socials.map((s) => (
 							<Card key={s.href}>
 								<Link
 									href={s.href}
 									target="_blank"
-									className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24 lg:pb-48  md:p-16"
+									className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:pb-8 lg:pb-24 md:p-16"
 								>
 									<span
 										className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent"
@@ -118,11 +118,11 @@ export default function Contact() {
 						))}
 					</div>
 				</div>
-				<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl pl-10 w-screen">
+				<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl pl-6 md:pl-32 w-screen">
 					Direct Message
 				</h2>
 				<div className="w-full h-px bg-zinc-800 mb-5" />
-				<div id="message-form" className="w-screen">
+				<div id="message-form" className="w-screen mb-10">
 					<MessageForm />
 				</div>
 			</div>

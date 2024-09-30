@@ -58,7 +58,7 @@ export default function MessageForm() {
         <div>
             <form
                 onSubmit={handleFormSubmit}
-                className="flex items-center justify-center pl-10 pr-10"
+                className="flex items-center justify-center pl-32 pr-32"
             >
                 <div className="grid w-full grid-cols-1 gap-5 xs:grid-cols-1 sm:mt-0 sm:grid-cols-1 md:grid-cols-3 lg:gap-5 lg:grid-cols-3 xl:grid-cols-3">
                     <div className="flex flex-col gap-2 col-span-2">
