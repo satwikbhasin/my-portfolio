@@ -84,11 +84,11 @@ export default function Contact() {
 	return (
 		<div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-screen overflow-scroll">
 			<Navigation />
-			<div className="flex items-left flex-col w-screen pt-24 pb-10 gap-3">
-				<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl pl-5">
+			<div className="flex items-center flex-col w-screen pt-24 pb-10 gap-3 md:pr-10 md:pl-10">
+				<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl pl-10 w-screen">
 					Social
 				</h2>
-				<div className="w-3/4 h-px bg-zinc-800 mb-5" />
+				<div className="w-full h-px bg-zinc-800 mb-5" />
 				<div className="flex items-center flex-col w-screen gap-5 mb-10">
 					<div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-16 w-3/4 md:w-screen md:pl-10 md:pr-10">
 						{socials.map((s) => (
@@ -118,7 +118,7 @@ export default function Contact() {
 						))}
 					</div>
 				</div>
-				<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl pl-5 mt-5">
+				<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl pl-10 w-screen">
 					Direct Message
 				</h2>
 				<div className="w-full h-px bg-zinc-800 mb-5" />
