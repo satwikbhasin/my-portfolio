@@ -17,11 +17,11 @@ export default function ResumeViewer() {
   const [copyTimeout, setCopyTimeout] = useState(false);
   const [downloadTimeout, setDownloadTimeout] = useState(false);
   return (
-    <div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
+    <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-screen overflow-scroll">
       <Navigation />
-      <div className="flex flex-col items-center justify-center py-20 h-screen gap-2 w-screen">
+      <div className="flex items-center justify-center flex-col w-screen h-screen pt-24 pb-10">
         <div
-          className="group rounded-lg overflow-hidden relative w-3/4"
+          className="group rounded-lg overflow-hidden relative w-3/4 md:w-1/2"
           onClick={() => {
             window.open("/resume.pdf", "_blank");
           }}
