@@ -49,6 +49,10 @@ export default async function ProjectsPage() {
             Some of the projects are academic and some are on my own time.
           </p>
         </div>
+        <img
+          src="https://github-readme-stats.vercel.app/api?username=satwikbhasin&theme=dark&show_icons=true"
+          alt="GitHub Stats"
+        />
         <div className="w-full h-px bg-zinc-800" />
 
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
