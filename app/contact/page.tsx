@@ -89,7 +89,7 @@ export default function Contact() {
 					Social
 				</h2>
 				<div className="w-full h-px bg-zinc-800 mb-5" />
-				<div className="flex items-center flex-col w-screen gap-5 mb-10">
+				<div className="flex items-center flex-col w-screen gap-5 mb-28">
 					<div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-6 w-3/4 md:w-screen md:pl-32 md:pr-32">
 						{socials.map((s) => (
 							<Card key={s.href}>
