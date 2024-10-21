@@ -69,7 +69,7 @@ export default function Home() {
                 ]}
                 typeSpeed={50}
                 deleteSpeed={100}
-                delaySpeed={1000}
+                delaySpeed={800}
               />
             </div>
           )}
