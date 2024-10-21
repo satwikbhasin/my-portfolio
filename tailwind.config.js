@@ -111,11 +111,11 @@ module.exports = {
 				},
 			},
 			colors: {
-				'sea-green': '#33D49A',
+				'sea-green': '#2FB883',
 				'text': "#6C6C74",
 				'text-bg': "#1F1F1F",
-				'hover': "#383838"
-			}
+				'hover': "#383838",
+			},
 		},
 	},
 	variants: {
