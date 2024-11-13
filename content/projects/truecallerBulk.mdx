@@ -9,9 +9,9 @@ mobileSupported: true
 published: true
 ---
 
-# Overview
+## Overview
 
-This project leverages the Truecaller API to fetch details for phone numbers provided in a CSV file and generates a PDF report with the results.
+This website leverages the Truecaller API to fetch details for phone numbers provided in a CSV file and generates a PDF report with the results.
 
 You can get an API key from RapidAPI [here](https://rapidapi.com/DataCrawler/api/truecaller4). Please note that the API is rate-limited to 20 requests per minute which means your csv file should not contain more than 20 phone numbers.
 
@@ -27,14 +27,11 @@ You can get an API key from RapidAPI [here](https://rapidapi.com/DataCrawler/api
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **UI Components**: [NextUI](https://nextui.org/)
-- **PDF Generation**: [jsPDF](https://github.com/parallax/jsPDF), [pdf-lib](https://github.com/Hopding/pdf-lib), [pdfmake](https://github.com/bpampuch/pdfmake)
-- **CSV Parsing**: [csv-parser](https://github.com/mafintosh/csv-parser)
 - **Icons**: [Lucide React](https://lucide.dev/)
-- **State Management**: [React](https://reactjs.org/)
 - **Theming**: [next-themes](https://github.com/pacocoursey/next-themes)
-- **HTTP Requests**: [node-fetch](https://github.com/node-fetch/node-fetch)
+- **Deployment**: [Vercel](https://vercel.com)
 
-## Instructions
+## How to Use
 
 1. **Upload a CSV File**: Select your CSV file containing phone numbers to upload. Ensure your CSV file follows the format shown below:
 
@@ -47,8 +44,11 @@ You can get an API key from RapidAPI [here](https://rapidapi.com/DataCrawler/api
 2. **Select Region**: Choose the region for the phone numbers from the dropdown menu.
 
 3. **Enter Secret Key**: Provide your secret key for API access.
-    - You can get your API Key here: https://rapidapi.com/DataCrawler/api/truecaller4/pricing
+
+   - You can get your API Key here: https://rapidapi.com/DataCrawler/api/truecaller4/pricing
 
 4. **Submit**: Click on the "Submit" button to process the phone numbers.
 
 5. **Download PDF Report**: Once the processing is complete, open the downloaded PDF report.
+
+---

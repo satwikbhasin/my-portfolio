@@ -9,14 +9,36 @@ desktopSupported: true
 published: true
 ---
 
-By leveraging advanced algorithms, Evalutron evaluates assignments based on predefined rubrics, ensuring consistent and objective grading. With its intuitive interface and robust automation capabilities, Evalutron simplifies the grading workflow, saving time for educators while providing valuable feedback to students. Get started with Evalutron today to enhance efficiency and accuracy in assignment evaluation.
+## Overview
 
-- Fully Automated
-- AI-Powered
+Evalutron is an AI-powered autograder designed for university educators and institutions to streamline the grading process of student submissions. By evaluating student work based on predefined rubrics, Evalutron ensures consistent and objective grading. Its intuitive interface and robust automation capabilities simplify the grading workflow, saving time for educators while providing valuable feedback to students.
 
-<h2>Note</h2>
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: CSS
+- **GenAI**: OpenAI Assistant
+- **Deployment**: [Vercel](https://vercel.com)
+
+## Instructions
+
+To use Evalutron effectively, please follow these steps:
+
+1. **Add Associated Class**: Specify the class for which the assignments are being graded.
+2. **Add Associated Topics**: List the topics covered in the assignment.
+3. **Upload Assignment Questionnaire**: Provide the assignment questions in a PDF format.
+4. **Upload Assignment Rubric**: Provide the grading rubric in a PDF format.
+5. **Upload Assignment Submissions**: Upload the student submissions in a PDF format.
+6. **Click Evaluate** & wait for the result
+
+## Note
 
 Right now, Evalutron has preset files **[assignment_questions, assignment_rubric, student_solution]**. So it **doesn't matter which files you upload**. It will **always evaluate based on the preset files**.
 
-<h3>Preset files:</h3>- [assignment_questions](https://evalutron.vercel.app/testFiles/questions.pdf)
-- [assignment_rubric](https://evalutron.vercel.app/testFiles/rubric.pdf) - [student_solution](https://evalutron.vercel.app/testFiles/solutions.pdf)
+### Preset files for you to verify
+
+- [assignment_questions](https://evalutron.vercel.app/testFiles/questions.pdf)
+- [assignment_rubric](https://evalutron.vercel.app/testFiles/rubric.pdf)
+- [student_solution](https://evalutron.vercel.app/testFiles/solutions.pdf)
+
+---

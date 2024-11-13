@@ -1,6 +1,6 @@
 ---
 title: SpiralKey
-description: SpiralKey is a unique responsive web app that enhances symmetric encryption with a touch of magic
+description: SpiralKey is a responsive web app that implements a unique cryptography method
 repository: satwikbhasin/SpiralKey
 date: "2024-04-28"
 url: https://spiralkey.vercel.app
@@ -10,40 +10,69 @@ mobileSupported: true
 ---
 
 ## Overview
-**SpiralKey** is a cutting-edge cryptographic method that combines the robustness of symmetric key encryption with the captivating properties of spiral matrices. This dual-layer approach ensures both security and intrigue, making it an exciting choice for safeguarding sensitive data.
+
+**SpiralKey** is a web application developed as part of my Cryptography class (ICSI 526) at SUNY Albany. It is a user-friendly tool that encrypts and decrypts text using the robustness of symmetric key encryption combined with the captivating properties of spiral matrices. This dual-layer approach ensures both security and intrigue.
+
+## Tech Stack
+
+- **Frontend**: Next.js
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
+
+## Features
+
+- **Responsive Design**: The app is fully responsive and works seamlessly on both desktop and mobile devices.
+- **Modern Design**: SpiralKey features a modern and intuitive user interface.
+- **Browser-Based**: All encryption and decryption processes happen entirely in the browser, ensuring that no data is sent to a backend server.
 
 ## How It Works
-1. **Symmetric Key Encryption**:
-   - **Step 1**: The plaintext message is first encrypted using a symmetric key algorithm (such as AES or DES). This process ensures confidentiality and authenticity.
-   - **Step 2**: The resulting ciphertext becomes the input for the next layer of encryption.
 
-2. **Spiral Matrix Encryption**:
-   - **Step 3**: The ciphertext is divided into manageable blocks.
-   - **Step 4**: These blocks are arranged in a square matrix following a spiral pattern.
-   - **Step 5**: Sub-matrices are formed from this arrangement.
-   - **Step 6**: The column-wise bits of these sub-matrices contribute to the final encrypted binary string.
+### Encryption
 
-3. **Symmetric Key Decryption**:
-   - **Step 7**: To decrypt, reverse the process:
-     - Reconstruct the square matrix from the encrypted binary string using the spiral pattern.
-     - Extract bits from the matrix (from most significant bit to least significant bit) to obtain the decrypted binary string.
-     - Regenerate the original ciphertext.
-     - Decrypt the ciphertext using the same symmetric key.
+- Go to the encryption tab.
+- Enter your plaintext message.
+- The app shows you the process of conversion and generates the ciphertext.
+- You can then send the ciphertext to someone.
 
-## Advantages of SpiralKey
-- **Enhanced Security**: By combining symmetric encryption with spiral matrices, SpiralKey offers a double layer of protection.
-- **Efficiency**: The use of spiral matrices allows for efficient encoding and decoding.
-- **Intriguing Aesthetics**: The visual representation of spiral matrices adds an artistic touch to the encryption process.
+### Decryption
 
-## Use Cases
-- **Secure Messaging**: SpiralKey can be used for confidential communication between parties.
-- **File Encryption**: Protect sensitive files using this innovative technique.
-- **Blockchain and Cryptocurrencies**: SpiralKey could enhance security in blockchain networks.
+- The recipient goes to the decryption tab.
+- They paste the received ciphertext.
+- The app processes the ciphertext and reveals the original plaintext message.
+
+## Encryption Mechanism
+
+### Part 1 - Symmetric Key Encryption
+
+- **Step 1**: The plaintext message is first encrypted using a symmetric key algorithm (AES). This process ensures confidentiality and authenticity.
+
+- **Step 2**: The resulting ciphertext becomes the input for the next layer of encryption.
+
+### Part 2 - Spiral Matrix Encryption
+
+- **Step 3**: The ciphertext is divided into manageable blocks.
+
+- **Step 4**: These blocks are arranged in a square matrix following a spiral pattern.
+
+- **Step 5**: Sub-matrices are formed from this arrangement.
+
+- **Step 6**: The column-wise bits of these sub-matrices contribute to the final encrypted binary string.
+
+## Decryption Mechanism
+
+- **Step 1**: Reconstruct the square matrix from the encrypted binary string using the spiral pattern.
+
+- **Step 2**: Extract bits from the matrix (from most significant bit to least significant bit) to obtain the decrypted binary string.
+
+- **Step 3**: Regenerate the original ciphertext.
+
+- **Step 4**: Decrypt the ciphertext using the same symmetric key.
+
+## References for Cryptography Process
+
+1. Paul, M., & Mandal, J. K. (2013). _A Novel Symmetric Key Cryptographic Technique at Bit Level Based on Spiral Matrix Concept._ International Conference on Information Technology, Electronics and Communications (ICITEC – 2013).
+2. _Spiral Cipher: Enigmatic Disk Cipher._ Catencode.
+3. _Cryptography: Matrices and Encryption._ University of Utah.
+4. _Application of Matrices in Cryptography._ LibreTexts.
 
 ---
-
-**References**:
-1. Paul, M., & Mandal, J. K. (2013). *A Novel Symmetric Key Cryptographic Technique at Bit Level Based on Spiral Matrix Concept.* International Conference on Information Technology, Electronics and Communications (ICITEC – 2013).
-2. *Spiral Cipher: Enigmatic Disk Cipher.* Catencode.
-3. *Cryptography: Matrices and Encryption.* University of Utah.
-4. *Application of Matrices in Cryptography.* LibreTexts.

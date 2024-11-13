@@ -1,6 +1,6 @@
 ---
 title: Text To PDF Converter
-description: A learning project to explore AWS full-stack development. A responsive web app which converts text files to PDFs using a serverless backend and efficient file handling
+description: Text To PDF Converter is a responsive web application developed to explore AWS full-stack development
 repository: satwikbhasin/text-to-pdf-converter-aws-full-stack
 date: "2024-07-08"
 published: true
@@ -8,9 +8,11 @@ desktopSupported: true
 mobileSupported: true
 ---
 
-***Note:*** *Currently the deployment is down to avoid AWS charges*
+**Note:** _Currently the deployment is down to avoid AWS charges_
 
-# text-to-pdf-converter / aws-full-stack-demo-app
+## Overview
+
+Text To PDF Converter is a responsive web application developed to explore AWS full-stack development. This project converts text files to PDFs using a serverless backend and efficient file handling. Built entirely with AWS Cloud Development Kit (CDK), it leverages various AWS services to provide a seamless and scalable solution for file conversion.
 
 ## Application Flow
 
@@ -43,11 +45,11 @@ mobileSupported: true
 
 This app utilizes AWS services like S3, API Gateway, DynamoDB, Lambda, and EC2 in a structured and efficient manner.
 
-**\*Note:** Make sure you have Node.js installed, we will be using `npm`\*
+**Note:** Make sure you have Node.js installed, we will be using `npm`
 
 ## Backend Setup
 
-**\*Note:** Before deploying with AWS CDK, ensure that `aws-cdk`, `awscli`, and `aws-sdk` are installed. Additionally, make sure you are logged into AWS CLI using the root/IAM account you intend to deploy the CDK to\*
+**Note:** Before deploying with AWS CDK, ensure that `aws-cdk`, `awscli`, and `aws-sdk` are installed. Additionally, make sure you are logged into AWS CLI using the root/IAM account you intend to deploy the CDK to
 
 - Navigate to the backend directory
 
@@ -172,10 +174,12 @@ The **submitter** attribute with a value of **"user"** in DynamoDB ensures that 
 
 ## API's
 
-## `generateSignedS3UrlApi`
+### `generateSignedS3UrlApi`
 
 The `generateSignedS3UrlApi` is attached to a lambda function named `generateSignedS3Url` which generates signed URLs for secure access to objects stored in an Amazon S3 bucket. These URLs grant temporary, controlled access to specified resources without exposing AWS credentials.
 
-## `manageUserSubmissionsTableApi`
+### `manageUserSubmissionsTableApi`
 
 The `manageUserSubmissionsTableApi` is attached to a lambda function named `manageUserSubmissionsTable` which is designed to manage submissions within a database table named `userSubmissionsTable`. This API allows operations such as creating new submissions, retrieving submission details, updating existing submissions.
+
+---

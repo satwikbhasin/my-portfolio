@@ -8,14 +8,14 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: {
-    default: "satwikbhasin.com",
+    default: "Satwik Bhasin",
     template: "%s | satwikbhasin.com",
   },
-  description: "Passion for development",
+  description: "Full Stack Software Engineer",
   openGraph: {
-    title: "satwikbhasin.com",
+    title: "Satwik Bhasin",
     description:
-      "Passion for development",
+      "Full Stack Software Engineer",
     url: "https://satwikbhasin.com",
     siteName: "satwikbhasin.com",
     images: [
