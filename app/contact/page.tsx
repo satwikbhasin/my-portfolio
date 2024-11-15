@@ -82,7 +82,7 @@ export default function Contact() {
 	}, []);
 
 	return (
-		<div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-full">
+		<div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-screen overflow-scroll">
 			<Navigation />
 			<div className="flex items-center flex-col w-screen pt-24 pb-10 gap-3 md:pr-32 md:pl-32">
 				<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl pl-6 md:pl-32 w-screen">

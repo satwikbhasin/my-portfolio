@@ -3,7 +3,7 @@ import { Navigation } from "../components/nav";
 import {
   Download,
   ClipboardCheck,
-  Copy,
+  Link,
   Check,
   View,
   Loader,
@@ -53,8 +53,8 @@ export default function ResumeViewer() {
               className="text-zinc-100 p-2 flex flex-row items-center justify-center hover:text-sea-green font-kode-mono"
               style={{ fontSize: 15, cursor: "pointer" }}
             >
+              <View size={18} className="mr-2 text-sea-green" />
               View
-              <View size={18} className="ml-2 text-sea-green" />
             </div>
           </Card>
           <Card>
@@ -74,13 +74,13 @@ export default function ResumeViewer() {
             >
               {downloadTimeout ? (
                 <>
+                  <Check size={18} className="mr-2 text-sea-green" />
                   Download
-                  <Check size={18} className="ml-2 text-sea-green" />
                 </>
               ) : (
                 <>
+                  <Download size={18} className="mr-2 text-sea-green" />
                   Download
-                  <Download size={18} className="ml-2 text-sea-green" />
                 </>
               )}
             </div>
@@ -97,13 +97,13 @@ export default function ResumeViewer() {
             >
               {copyTimeout ? (
                 <>
+                  <ClipboardCheck size={18} className="mr-2 text-sea-green" />
                   Copy
-                  <ClipboardCheck size={18} className="ml-2 text-sea-green" />
                 </>
               ) : (
                 <>
+                  <Link size={18} className="mr-2 text-sea-green" />
                   Copy
-                  <Copy size={18} className="ml-2 text-sea-green" />
                 </>
               )}
             </div>
