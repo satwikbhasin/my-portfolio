@@ -10,7 +10,7 @@ published: true
 
 ## Overview
 
-As a Teaching Assistant at SUNY Albany, I designed Evalutron to help streamline the grading process for university assignments. The repetitive and monotonic nature of grading can be time-consuming and tedious. Evalutron is an AI-powered autograder that grades student submissions based on a provided rubric and offers constructive feedback.
+As a Teaching Assistant at SUNY Albany, I designed Evalutron to help streamline the grading process for university assignments. The repetitive and monotonous nature of grading can be time-consuming and tedious. Evalutron is an AI-powered autograder that grades student submissions based on a provided rubric and offers constructive feedback.
 
 ## Tech Stack
 
@@ -27,29 +27,25 @@ As a Teaching Assistant at SUNY Albany, I designed Evalutron to help streamline 
   - OpenAI API
   - Vercel's Lambda Functions
 
-- **Tools & Libraries:**
-  - ESLint
-  - Prettier
-  - React Markdown
-  - Remark GFM
+## How it Works
 
-## How the Project Works
+### 1. User Authentication
 
-1. **User Authentication:**
+Users authenticate using a PIN to access the application. **If you wish to take a demo, please reach out :)**
 
-   - Users authenticate using a PIN to access the application. If you wish to take a demo, please reach out :)
+### 2. File Upload
 
-2. **File Upload:**
+Users upload the assignment questionnaire, grading rubric, and student submission in PDF format.
 
-   - Users upload the assignment questionnaire, grading rubric, and student submission in PDF format.
+### 3. Grading Process
 
-3. **Grading Process:**
+- The uploaded files are sent to the OpenAI API for processing.
+- **Prompt Engineering:** The AI is guided using carefully crafted prompts to evaluate the submissions based on the provided rubric.
+- The AI evaluates the submission based on the provided rubric and generates grades and feedback.
 
-   - The uploaded files are sent to the OpenAI API for processing.
-   - The AI evaluates the submission based on the provided rubric and generates grade and feedback.
+### 4. Results Compilation
 
-4. **Results Compilation:**
-   - The results, including grades & feedback are compiled into an organized format.
-   - Users can download the results in CSV format for easy integration into Excel.
+- The results, including grades & feedback, are compiled into an organized format.
+- Users can download the results in CSV format for easy integration into Excel.
 
 ---
