@@ -27,6 +27,10 @@ As a Teaching Assistant at SUNY Albany, I designed Evalutron to help streamline 
   - OpenAI API
   - Vercel's Lambda Functions
 
+<div align="center">
+  [![](/projectSpecificAssets/evalutron/requirements.png)](https://evalutron.vercel.app)
+</div>
+
 ## How it Works
 
 ### 1. User Authentication
@@ -37,13 +41,17 @@ Users authenticate using a PIN to access the application. **If you wish to take 
 
 Users upload the assignment questionnaire, grading rubric, and student submission in PDF format.
 
-### 3. Grading Process
+### 3. Specify Class & Topics
+
+Users specify the class and topics related to the assignment. This helps the AI to better understand the context and provide more accurate grading and feedback.
+
+### 4. Grading Process
 
 - The uploaded files are sent to the OpenAI API for processing.
 - **Prompt Engineering:** The AI is guided using carefully crafted prompts to evaluate the submissions based on the provided rubric.
 - The AI evaluates the submission based on the provided rubric and generates grades and feedback.
 
-### 4. Results Compilation
+### 5. Results Compilation
 
 - The results, including grades & feedback, are compiled into an organized format.
 - Users can download the results in CSV format for easy integration into Excel.
