@@ -10,34 +10,46 @@ published: true
 
 ## Overview
 
-Evalutron is an AI-powered autograder designed for university educators and institutions to streamline the grading process of student submissions. By evaluating student work based on predefined rubrics, Evalutron ensures consistent and objective grading. Its intuitive interface and robust automation capabilities simplify the grading workflow, saving time for educators while providing valuable feedback to students.
+As a Teaching Assistant at SUNY Albany, I designed Evalutron to help streamline the grading process for university assignments. The repetitive and monotonic nature of grading can be time-consuming and tedious. Evalutron is an AI-powered autograder that grades student submissions based on a provided rubric and offers constructive feedback.
 
 ## Tech Stack
 
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Styling**: CSS
-- **GenAI**: OpenAI Assistant
-- **Deployment**: [Vercel](https://vercel.com)
+- **Frontend:**
 
-## Instructions
+  - React
+  - Next.js
+  - Tailwind CSS
+  - NextUI
 
-To use Evalutron effectively, please follow these steps:
+- **Backend:**
 
-1. **Add Associated Class**: Specify the class for which the assignments are being graded.
-2. **Add Associated Topics**: List the topics covered in the assignment.
-3. **Upload Assignment Questionnaire**: Provide the assignment questions in a PDF format.
-4. **Upload Assignment Rubric**: Provide the grading rubric in a PDF format.
-5. **Upload Assignment Submissions**: Upload the student submissions in a PDF format.
-6. **Click Evaluate** & wait for the result
+  - Node.js
+  - OpenAI API
+  - Vercel's Lambda Functions
 
-## Note
+- **Tools & Libraries:**
+  - ESLint
+  - Prettier
+  - React Markdown
+  - Remark GFM
 
-Right now, Evalutron has preset files **[assignment_questions, assignment_rubric, student_solution]**. So it **doesn't matter which files you upload**. It will **always evaluate based on the preset files**.
+## How the Project Works
 
-### Preset files for you to verify
+1. **User Authentication:**
 
-- [assignment_questions](https://evalutron.vercel.app/testFiles/questions.pdf)
-- [assignment_rubric](https://evalutron.vercel.app/testFiles/rubric.pdf)
-- [student_solution](https://evalutron.vercel.app/testFiles/solutions.pdf)
+   - Users authenticate using a PIN to access the application. If you wish to take a demo, please reach out :)
+
+2. **File Upload:**
+
+   - Users upload the assignment questionnaire, grading rubric, and student submission in PDF format.
+
+3. **Grading Process:**
+
+   - The uploaded files are sent to the OpenAI API for processing.
+   - The AI evaluates the submission based on the provided rubric and generates grade and feedback.
+
+4. **Results Compilation:**
+   - The results, including grades & feedback are compiled into an organized format.
+   - Users can download the results in CSV format for easy integration into Excel.
 
 ---
