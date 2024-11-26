@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { Analytics as BeamAnalytics } from "./components/analytics";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Link } from "@mui/material";
 
 export const metadata: Metadata = {
   title: {
@@ -72,6 +73,29 @@ export default function RootLayout({
         <BeamAnalytics />
         <SpeedInsights />
       </body>
+      <footer className="text-zinc-500 mt-3 mb-3 text-center text-sm">
+        Built by{" "}
+        <Link
+          style={{
+            color: "seagreen",
+            textDecoration: "none",
+          }}
+          href="
+        https://linkedin.com/in/satwikbhasin">
+          Satwik Bhasin
+        </Link>
+        {" "}|{" "}
+        Get this template on{" "}
+        <Link
+          style={{
+            color: "seagreen",
+            textDecoration: "none",
+          }}
+          href="
+        https://github.com/satwikbhasin/my-portfolio">
+          GitHub
+        </Link>
+      </footer>
     </html>
   );
 }
