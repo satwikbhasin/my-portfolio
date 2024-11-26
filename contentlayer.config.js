@@ -48,6 +48,10 @@ export const Project = defineDocumentType(() => ({
 		desktopSupported: {
 			type: 'boolean',
 		},
+		techStack: {
+			type: 'list',
+			of: { type: 'string' },
+		},
 	},
 	computedFields,
 }));

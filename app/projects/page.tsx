@@ -6,6 +6,7 @@ import { Card } from "../components/card";
 import { Article } from "./article";
 import { Redis } from "@upstash/redis";
 import { Eye, Smartphone, Monitor } from "lucide-react";
+import { TechChips } from "../components/techChips";
 
 const redis = Redis.fromEnv();
 
@@ -77,20 +78,21 @@ export default async function ProjectsPage() {
 
                 <h2
                   id="featured-post"
-                  className="mt-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
+                  className="mt-4 mb-4 text-3xl font-bold text-zinc-100 group-hover:text-white sm:text-4xl font-display"
                 >
                   {featured.title}
                 </h2>
-                <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
+                <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300 mb-4">
                   {featured.description}
                 </p>
+                <TechChips techStack={featured.techStack} />
                 <p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
                   <span className="font-bold text-sm">Best Experience on</span>
                   {featured.mobileSupported && <Smartphone className="inline-block w-4 h-4 ml-2" color="#33d49a" />}
                   {featured.desktopSupported && <Monitor className="inline-block w-4 h-4 ml-2" color="#33d49a" />}
                 </p>
                 <div className="absolute bottom-4 md:bottom-8">
-                  <p className="hidden text-zinc-200 hover:text-zinc-50 lg:block" style={{ color: "#33d49a" }}>
+                  <p className="mt-5 hidden text-zinc-200 hover:text-zinc-50 lg:block" style={{ color: "#33d49a" }}>
                     Read more <span aria-hidden="true">&rarr;</span>
                   </p>
                 </div>

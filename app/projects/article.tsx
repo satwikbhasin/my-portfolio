@@ -1,7 +1,7 @@
 import type { Project } from "@/.contentlayer/generated";
 import Link from "next/link";
 import { Eye, Smartphone, Monitor } from "lucide-react";
-import { Box } from "@mui/material";
+import { TechChips } from "../components/techChips";
 
 type Props = {
 	project: Project;
@@ -29,12 +29,13 @@ export const Article: React.FC<Props> = ({ project, views }) => {
 						{Intl.NumberFormat("en-US", { notation: "compact" }).format(views)}
 					</span>
 				</div>
-				<h2 className="z-20 text-xl font-medium duration-1000 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
+				<h2 className="z-20 mb-4 text-xl font-medium duration-1000 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
 					{project.title}
 				</h2>
-				<p className="z-20 mt-4 text-sm  duration-1000 text-zinc-400 group-hover:text-zinc-200">
+				<p className="mb-4 z-20 mt-4 text-sm duration-1000 text-zinc-400 group-hover:text-zinc-200">
 					{project.description}
 				</p>
+				<TechChips techStack={project.techStack} />
 				<p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
 					<span className="font-bold text-sm">Best Experience on</span>
 					{project.mobileSupported && <Smartphone className="inline-block w-4 h-4 ml-2" color="#33d49a" />}
