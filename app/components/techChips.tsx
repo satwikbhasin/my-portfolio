@@ -10,7 +10,7 @@ export const TechChips: React.FC<TechChipsProps> = ({ techStack }) => {
             {techStack && techStack.map((tech) => (
                 <span
                     key={tech}
-                    className="px-2 py-1 text-xs  text-zinc-400 bg-zinc-800 rounded-full"
+                    className="px-2 py-1 text-xs text-zinc-400 bg-zinc-800 rounded-full"
                 >
                     {tech}
                 </span>
