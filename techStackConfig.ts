@@ -1,0 +1,16 @@
+export const TECH_STACK_VALUES = [
+  "AWS",
+  "AWS Deployment",
+  "Vercel Deployment",
+  "Full-Stack",
+  "GenAI",
+  "Prompt Engineering",
+  "UI/UX",
+  "Encryption/Decryption",
+  "Truecaller API",
+  "Discord API",
+  "Google API",
+  "Decentralized App",
+  "Ethereum Blockchain",
+  "Smart Contracts",
+];
