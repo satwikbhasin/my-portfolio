@@ -42,6 +42,13 @@ export const metadata: Metadata = {
   icons: {
     shortcut: "/SB.png",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Satwik Bhasin",
+    description: "Full Stack Software Engineer",
+    images: ["https://satwikbhasin.com/SB.png"],
+  },
+  metadataBase: new URL("https://satwikbhasin.com"),
 };
 const inter = Inter({
   subsets: ["latin"],
