@@ -1,7 +1,7 @@
 import type { Project } from "@/.contentlayer/generated";
 import Link from "next/link";
 import { Eye, Smartphone, Monitor } from "lucide-react";
-import { TechChips } from "../components/techChips";
+import { TechChips } from "../components/projects/techChips";
 import "../styling/projectsPage.css";
 
 type Props = {

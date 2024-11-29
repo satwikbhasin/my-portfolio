@@ -6,7 +6,7 @@ import { useForm } from '@formspree/react';
 import { PhoneInput } from "react-international-phone";
 import 'react-international-phone/style.css';
 import '../styling/phoneField.css';
-import { Card } from "../components/card";
+import { Card } from "./card";
 
 export default function MessageForm() {
     const [formData, setFormData] = useState({ message: "", name: "", email: "", phone: "" });

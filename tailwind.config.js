@@ -111,7 +111,7 @@ module.exports = {
 				},
 			},
 			colors: {
-				'sea-green': '#2FB883',
+				'sea-green': '#247A65',
 				'text': "#6C6C74",
 				'text-bg': "#1F1F1F",
 				'hover': "#383838",
