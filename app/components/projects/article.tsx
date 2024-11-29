@@ -1,8 +1,8 @@
 import type { Project } from "@/.contentlayer/generated";
 import Link from "next/link";
 import { Eye, Smartphone, Monitor } from "lucide-react";
-import { TechChips } from "../components/projects/techChips";
-import "../styling/projectsPage.css";
+import { TechChips } from "./techChips";
+import "../../styling/projectsPage.css";
 
 type Props = {
 	project: Project;
@@ -13,8 +13,8 @@ export const Article: React.FC<Props> = ({ project, views }) => {
 	return (
 		<Link href={`/projects/${project.slug}`}>
 			<article className="p-4 md:p-8">
-				<div className="flex justify-between gap-2 items-center" style={{ color: "#50C878" }}>
-					<span style={{ color: "#33d49a" }} className=" color: #50C878 text-xs duration-1000 text-zinc-200 group-hover:text-white group-hover:border-zinc-200 drop-shadow-orange">
+				<div className="flex justify-between gap-2 items-center">
+					<span className="text-xs duration-1000 text-zinc-200 group-hover:text-white group-hover:border-zinc-200 drop-shadow-orange">
 						{project.date ? (
 							<time dateTime={new Date(project.date).toISOString()}>
 								{Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Card } from "../card";
 import { Eye, Smartphone, Monitor } from "lucide-react";
 import { TechChips } from "./techChips";
-import { Article } from "../../projects/article";
+import { Article } from "./article";
 import { Project } from "contentlayer/generated";
 
 interface FeaturedProjectsProps {

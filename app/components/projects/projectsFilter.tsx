@@ -32,19 +32,22 @@ const ProjectsFilter: React.FC<ProjectsFilterProps> = ({ searchValue, setSearchV
             onChange={handleSearchChange}
             noOptionsText={<span style={{ fontSize: "0.8rem", color: '#ffffff' }}>No Matches</span>}
             filterSelectedOptions
-            renderOption={(props, option) => (
-                <li {...props}>
-                    <Box>
-                        <Chip
-                            label={option}
-                            sx={{
-                                backgroundColor: "transparent",
-                                color: "#ffffff",
-                            }}
-                        />
-                    </Box>
-                </li>
-            )}
+            renderOption={(props, option) => {
+                const { key, ...otherProps } = props;
+                return (
+                    <li key={key} {...otherProps}>
+                        <Box>
+                            <Chip
+                                label={option}
+                                sx={{
+                                    backgroundColor: "transparent",
+                                    color: "#ffffff",
+                                }}
+                            />
+                        </Box>
+                    </li>
+                );
+            }}            
             renderInput={(params) => (
                 <TextField
                     {...params}

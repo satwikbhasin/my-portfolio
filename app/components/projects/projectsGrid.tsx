@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from "../card";
-import { Article } from "../../projects/article";
+import { Article } from "./article";
 import { Project } from "contentlayer/generated";
 
 interface ProjectsGridProps {
