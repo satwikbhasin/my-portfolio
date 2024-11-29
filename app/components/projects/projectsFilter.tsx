@@ -63,6 +63,7 @@ const ProjectsFilter: React.FC<ProjectsFilterProps> = ({ searchValue, setSearchV
                         backgroundColor: 'transparent',
                         '& .MuiOutlinedInput-root': {
                             color: '#a1a1aa',
+                            paddingRight: `0 !important`,
                             '& fieldset': {
                                 borderColor: 'transparent',
                             },
