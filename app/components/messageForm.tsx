@@ -73,9 +73,9 @@ export default function MessageForm() {
                             style={{
                                 flex: 1,
                                 overflow: "auto",
-                                color: "#6c6c74",
-                                backgroundColor: "#1f1f1f",
-                                border: "1px solid #6c6c74",
+                                color: "#ffffff",
+                                backgroundColor: "#0d0d0d",
+                                border: "0.1px solid rgb(69, 69, 69)",
                                 padding: 10,
                                 borderRadius: 5,
                                 fontSize: "small",
@@ -102,12 +102,12 @@ export default function MessageForm() {
                                 type="text"
                                 name="name"
                                 required={true}
-                                placeholder="Full Name"
+                                placeholder="Michael Scott"
                                 style={{
                                     overflow: "auto",
-                                    color: "#6c6c74",
-                                    backgroundColor: "#1f1f1f",
-                                    border: "1px solid #6c6c74",
+                                    color: "#ffffff",
+                                    backgroundColor: "#0d0d0d",
+                                    border: "0.1px solid rgb(69, 69, 69)",
                                     padding: 10,
                                     borderRadius: 5,
                                     width: "100%",
@@ -126,9 +126,9 @@ export default function MessageForm() {
                                 value={formData.email}
                                 style={{
                                     overflow: "auto",
-                                    color: "#6c6c74",
-                                    backgroundColor: "#1f1f1f",
-                                    border: "1px solid #6c6c74",
+                                    color: "#ffffff",
+                                    backgroundColor: "#0d0d0d",
+                                    border: "0.1px solid rgb(69, 69, 69)",
                                     padding: 10,
                                     borderRadius: 5,
                                     width: "100%",
@@ -137,7 +137,7 @@ export default function MessageForm() {
                                 className="font-kode-mono placeholder-input"
                                 type="email"
                                 name="email"
-                                placeholder="Email Address"
+                                placeholder="dunder@mifflin.com"
                                 required={true}
                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             />
@@ -155,11 +155,18 @@ export default function MessageForm() {
                                 placeholder="Phone Number"
                                 inputStyle={{
                                     width: "100%",
-                                    color: "#6c6c74",
+                                    color: "#ffffff",
+                                    backgroundColor: "#0d0d0d",
+                                    border: "0.1px solid rgb(69, 69, 69)",
                                 }}
+                                countrySelectorStyleProps={{
+                                    style: {
+                                        border: "0.5px solid rgb(69, 69, 69)",
+                                    }
+                                }
+                                }
                                 className="gap-1 font-kode-mono placeholder-input"
                                 style={{
-                                    border: "1px solid #6c6c74",
                                     borderRadius: 5,
                                     zIndex: 1,
                                 }}
