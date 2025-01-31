@@ -41,7 +41,7 @@ const filteredProjects = useMemo(() => {
 }, [searchValue]);
 
 const featured = useMemo(() => searchValue.length === 0 ? filteredProjects.find((project) => project.slug === "evalutron") : undefined, [filteredProjects, searchValue]);
-const top2 = useMemo(() => searchValue.length === 0 ? filteredProjects.find((project) => project.slug === "virtualvault") : undefined, [filteredProjects, searchValue]);
+const top2 = useMemo(() => searchValue.length === 0 ? filteredProjects.find((project) => project.slug === "orgview") : undefined, [filteredProjects, searchValue]);
 const top3 = useMemo(() => searchValue.length === 0 ? filteredProjects.find((project) => project.slug === "unichat") : undefined, [filteredProjects, searchValue]);
 
 const sorted = useMemo(() => {
