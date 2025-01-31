@@ -19,5 +19,6 @@ export const TECH_STACK_VALUES = [
   "React",
   "Node.js",
   "Django",
-  "MongoDB"
+  "MongoDB",
+  "TypeScript",
 ];
